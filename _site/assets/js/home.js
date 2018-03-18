@@ -49,6 +49,7 @@ function listMembers(rsp) {
         $('#status-' + memberID)
         .text('Online')
         .addClass('online')
+        .closest('.member')
         .prependTo('.memberList-list');
       } else {
         $('#status-' + memberID).text('Offline').removeClass('online');
