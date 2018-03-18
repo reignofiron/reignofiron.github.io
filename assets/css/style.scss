@@ -4,11 +4,22 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+body {
+  padding-top: 60px;
 }
 .roiNav {
   background: #222;
   height: 60px;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 600;
   ul {
     margin: 0;
     padding: 0;
@@ -17,6 +28,13 @@ body {
 .roiNav-logo {
   display: block;
   padding: 0 1rem;
+  @media screen and (max-width: 1024px) {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+  }
 }
 .roiNav-item {
   display: inline-block;
@@ -29,6 +47,9 @@ body {
     line-height: 60px;
     padding: 0 1rem;
     transition: 300ms ease;
+    &.is-current {
+      color: #e3d081;
+    }
     &:hover {
       color: #e3d081;
     }
@@ -40,7 +61,90 @@ body {
       }
     }
   }
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
 }
+
+.roiNav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  @media screen and (max-width: 1024px) {
+    position: fixed;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 200px;
+    height: 100vh;
+    height: calc(100vh - 60px);
+    top: 60px;
+    right: -200px;
+    -webkit-transition: right 600ms ease-in-out;
+    transition: right 600ms ease-in-out;
+    background: #222;
+    z-index: 300;
+    &.is-visible {
+      right: 0;
+    }
+  }
+}
+
+.roiNav-trigger {
+  display: none;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 1rem;
+  z-index: 400;
+  span {
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    -webkit-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+    &:first-child {
+      top: 9px;
+    }
+    &:last-child {
+      top: 15px;
+      width: 16px;
+      right: 0;
+    }
+  }
+  &.is-clicked {
+    span {
+      top: 11px;
+      background: #e3d081;
+      &:first-child {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      &:last-child {
+        width: 24px;
+        right: auto;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
+
 .roiFooter {
   background: #222;
   overflow: hidden;

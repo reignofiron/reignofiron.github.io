@@ -107,6 +107,9 @@ li {
   &.purple {
     color: $purple !important;
   }
+  &.gold {
+    color: $gold !important;
+  }
 }
 
 a {
@@ -125,8 +128,8 @@ p {
   line-height: 1.618em;
   a:not(.button):not(.outline-button) {
     font-weight: 700;
-    border-bottom: 1px solid $bright-blue;
-    box-shadow: inset 0 -.26em 0 0 $bright-blue;
+    border-bottom: 1px solid $gold;
+    box-shadow: inset 0 -.26em 0 0 $gold;
     transition: 300ms ease-in-out;
     color: inherit;
     &.plain-underline {
@@ -137,7 +140,7 @@ p {
     }
     @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
       &:hover {
-        box-shadow: inset 0 -1.618em 0 0 $bright-blue;
+        box-shadow: inset 0 -1.618em 0 0 $gold;
       }
       &.plain-underline {
         &:hover {
