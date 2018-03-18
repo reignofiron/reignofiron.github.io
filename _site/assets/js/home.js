@@ -1,5 +1,6 @@
 var
-  apiKey = "39424dade4d141af9a0807725a14ed20",
+  apiKey = "39424dade4d141af9a0807725a14ed20", // production
+  // apiKey = "6987280b74b24575a4e805277bb5baa6", // local
   groupID = "2974952";
 
 $.ajax({
@@ -11,7 +12,6 @@ $.ajax({
   var memberList = json.Response.results;
   console.log(memberList);
   listMembers(memberList);
-
 });
 
 function listMembers(rsp) {
@@ -45,7 +45,7 @@ function listMembers(rsp) {
         )
         .appendTo(list);
 
-      if (online === 'true') {
+      if (String(online) === 'true') {
         $('#status-' + memberID).text('Online').addClass('online');
       } else {
         $('#status-' + memberID).text('Offline').removeClass('online');
