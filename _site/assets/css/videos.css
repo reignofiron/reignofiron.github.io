@@ -1,0 +1,7 @@
+.hero#roi-videos-banner { background-image: url("/assets/img/reign-of-iron-banner-videos.jpg"); position: relative; }
+.hero#roi-videos-banner .hero-content { z-index: 200; }
+.hero#roi-videos-banner h1 { margin-top: 0; }
+.hero#roi-videos-banner::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65); z-index: 100; }
+
+.roiVideo { margin-bottom: 4.263rem; }
+.roiVideo.instagram iframe { margin: 0 auto !important; }

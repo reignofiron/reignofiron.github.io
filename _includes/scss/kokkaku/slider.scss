@@ -1,0 +1,112 @@
+//   Slider
+//   Markup structure
+//   .slider
+//     .slider-dots
+//       .slider-dot
+//     .slides
+//       .slide
+//         .slide-arrow/.left/.right
+//         .content (optional)
+//           .slide-content
+.slider {
+  position: relative;
+  width: 100%;
+}
+.slider-dots {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+  @include z-index-2;
+}
+.slider-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 0 3px;
+  transition: 300ms $transition-ease;
+  &.is-selected {
+    background: $white;
+  }
+  @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+    &:hover {
+      background: rgba($white, 0.5);
+    }
+    &.is-selected {
+      &:hover {
+        background: $white;
+      }
+    }
+  }
+}
+.slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 $spacing-large;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include vertical-center;
+  p {
+    color: white;
+  }
+}
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4.2em;
+  width: 2.6em;
+  cursor: pointer;
+  transition: 300ms ease;
+  @include vertical-center;
+  @include z-index-2;
+  background: rgba($dark-black, .25);
+  svg {
+    margin: auto;
+  }
+  &.prev {
+    left: 0;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  &.next {
+    right: 0;
+  }
+  @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+    &:hover {
+      background: rgba($dark-black, .75);
+    }
+  }
+}
+.slide-content {
+  background: rgba($white, .9);
+  padding: $spacing-normal;
+  @include boxshadow($boxshadow-lrg-50);
+  h3 {
+    color: $black;
+    font-size: $type-large;
+    font-weight: 300;
+    margin-top: 0;
+  }
+  p {
+    color: lighten($black, 25%);
+  }
+}
+.is-visible {
+  .slide-content {
+    animation: slideLeft 1000ms $transition-ease-in 1 forwards, fadeIn 500ms linear 1 forwards;
+  }
+}

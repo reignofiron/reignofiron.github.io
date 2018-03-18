@@ -1,0 +1,24 @@
+---
+layout: default
+title: Maps
+style:
+  - "maps.css"
+---
+<section class="hero" id="roi-maps-banner">
+  <div class="content hero-content">
+    <h1 class="white">Maps</h1>
+    <p class="gray">PvP maps for strategic use</p>
+  </div>
+</section>
+<section class="color-block white">
+  <div class="content">
+    <div class="j-col j-col-12">
+      {% for map in site.data.maps %}
+      <div class="roiMap">
+        <h2>{{map.title}}</h2>
+        <img src="/assets/img/maps/{{map.img}}-destiny-2-map.jpg" alt="">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

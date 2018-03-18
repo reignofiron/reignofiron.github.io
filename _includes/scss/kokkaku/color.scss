@@ -1,0 +1,57 @@
+$blue:           #0860b8;
+$dark-blue:      #073971;
+$darker-blue:    #052b55;
+$darkest-blue:   #041d39;
+$bright-blue:    #41cdfc;
+$orange:         #ff902c;
+$yellow:         #f9ef3b;
+$red:            #C3423F;
+$gold:           #e3d081;
+$green:          #9BC53D;
+$dark-green:     #2cb566;
+$purple:         #4e57f4;
+$white:          #fff;
+$gray:           #ccc;
+$light-gray:     #eee;
+$lighter-gray:   #f9f9f9;
+$dark-gray:      #404041;
+$black:          #333;
+$dark-black:     #191919;
+
+// Gradients
+
+@mixin blue-to-dark-blue {
+  background-color: #052b55;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #0860b8, #052b55 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #0860b8, #052b55 125%);
+}
+
+@mixin bright-blue-to-blue {
+  background-color: #052b55;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #41cdfc, #0860b8 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #41cdfc, #0860b8 125%);
+}
+
+@mixin orange-to-red {
+  background-color: #ed4e39;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #ff902c, #ed4e39 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #ff902c, #ed4e39 125%);
+}
+
+@mixin green-to-dark-green {
+  background-color: #2cb566;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #4dcf83, #2cb566 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #4dcf83, #2cb566 125%);
+}
+
+@mixin yellow-to-orange {
+  background-color: #ff902c;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #f9ef3b, #ff902c 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #f9ef3b, #ff902c 125%);
+}
+
+@mixin yellow-to-red {
+  background-color: #ed4e39;
+  background-image: -webkit-radial-gradient(circle farthest-side at right top, #f9ef3b, #ed4e39 125%);
+  background-image: radial-gradient(circle farthest-side at right top, #f9ef3b, #ed4e39 125%);
+}

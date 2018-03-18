@@ -1,0 +1,154 @@
+//   Tertiary Nav
+//   Markup Structure
+//     .tertiary
+//     nav.tertiary-nav
+//       ul
+//         li.tertiary-nav-item
+//     .tertiary-nav-content
+
+.tertiary {
+  margin-bottom: $spacing-large;
+}
+nav.tertiary-nav {
+  width: 100%;
+  text-align: center;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    -webkit-padding-start: 0;
+    margin: $spacing-large 0;
+    width: 100%;
+  }
+}
+@mixin scrollshadow($color) { // mixin for faded effect to indicate scrollable content
+  background: -webkit-gradient(linear, left top, right top, from(rgba($color, 0)), to(rgba($color, 1)));background: linear-gradient(to right, rgba($color, 0) 0%, rgba($color, 1) 100%);
+  pointer-events: none;
+}
+li.tertiary-nav-item {
+  display: inline-block;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition: 600ms $transition-ease-in;
+  a,
+  span {
+    display: block;
+    padding: $spacing-smallest $spacing-small;
+    color: lighten($black, 40%);
+    transition: 600ms $transition-ease-in;
+  }
+  &.is-selected {
+    a,
+    span {
+      color: $black;
+      @media #{$mobile}, #{$tablet} {
+        color: $blue;
+      }
+    }
+  }
+  @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+    &:hover {
+      a,
+      span {
+        color: $black;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $blue;
+      transition: 600ms $transition-ease-in;
+    }
+    &.is-selected {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+.tertiary-nav-content {
+  position: relative;
+  &.is-visible {
+    &.slideUp {
+      animation: slideUp 1000ms $transition-ease 1 forwards;
+    }
+    &.slideDown {
+      animation: slideDown 1000ms $transition-ease 1 forwards;
+    }
+    &.slideLeft {
+      animation: slideLeft 1000ms $transition-ease 1 forwards;
+    }
+    &.slideRight {
+      animation: slideRight 1000ms $transition-ease 1 forwards;
+    }
+  }
+}
+.tertiary {
+  @media #{$tablet}, #{$mobile} {
+    .tertiary-nav {
+      position: relative;
+      ul {
+        margin-top: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        padding: $spacing-smallest;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+          width: 0 !important;
+          background: transparent;
+        }
+        &::-webkit-scrollbar-track {
+          display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+          display: none;
+        }
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 68px;
+        @include z-index-3;
+      }
+    }
+    .tertiary-nav-item {
+      margin: 0;
+      -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+      span {
+        display: inline-block;
+      }
+      &:last-child {
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 68px;
+          height: 100%;
+          background: transparent;
+        }
+      }
+    }
+  }
+}

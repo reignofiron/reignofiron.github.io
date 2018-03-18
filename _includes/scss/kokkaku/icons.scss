@@ -1,0 +1,15 @@
+.icon {
+  transition: fill 300ms $transition-ease;
+  &.white {
+    fill: $white;
+  }
+  &.black {
+    fill: $black;
+  }
+  &.blue {
+    fill: $blue;
+  }
+  &.orange {
+    fill: $orange;
+  }
+}

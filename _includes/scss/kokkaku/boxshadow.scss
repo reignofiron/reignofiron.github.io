@@ -1,0 +1,32 @@
+@mixin boxshadow($boxshadow) {
+  -webkit-box-shadow: $boxshadow;
+  -moz-box-shadow:    $boxshadow;
+  box-shadow:         $boxshadow;
+}
+
+$boxshadow-sm-10:       0 .1em .16em 0 rgba(black, .1);
+$boxshadow-sm-20:       0 .1em .16em 0 rgba(black, .2);
+$boxshadow-sm-30:       0 .1em .16em 0 rgba(black, .3);
+$boxshadow-sm-40:       0 .1em .16em 0 rgba(black, .4);
+$boxshadow-sm-50:       0 .1em .16em 0 rgba(black, .5);
+
+$boxshadow-med-10:      0 .68em 1em -.42em rgba(black, .1);
+$boxshadow-med-20:      0 .68em 1em -.42em rgba(black, .2);
+$boxshadow-med-30:      0 .68em 1em -.42em rgba(black, .3);
+$boxshadow-med-40:      0 .68em 1em -.42em rgba(black, .4);
+$boxshadow-med-50:      0 .68em 1em -.42em rgba(black, .5);
+
+$boxshadow-lrg-10:      0 1em 1.618em -.68em rgba(black, .1);
+$boxshadow-lrg-20:      0 1em 1.618em -.68em rgba(black, .2);
+$boxshadow-lrg-30:      0 1em 1.618em -.68em rgba(black, .3);
+$boxshadow-lrg-40:      0 1em 1.618em -.68em rgba(black, .4);
+$boxshadow-lrg-50:      0 1em 1.618em -.68em rgba(black, .5);
+
+$boxshadow-xl-10:       0 1.618em 2.618em -1em rgba(black, .1);
+$boxshadow-xl-20:       0 1.618em 2.618em -1em rgba(black, .2);
+$boxshadow-xl-30:       0 1.618em 2.618em -1em rgba(black, .3);
+$boxshadow-xl-40:       0 1.618em 2.618em -1em rgba(black, .4);
+$boxshadow-xl-50:       0 1.618em 2.618em -1em rgba(black, .5);
+
+// Glows
+$glow-white:            inset 0 0 .6em 0 rgba($white, .5), inset 0 0 .26em 0 rgba($white, .25);

@@ -1,0 +1,149 @@
+.button {
+	background: $blue;
+	border-radius: 3px;
+	color: $white;
+	cursor: pointer;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 700;
+	letter-spacing: .16em;
+	padding: $spacing-small $spacing-normal;
+  transition: 400ms $transition-ease;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+  @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+    &:hover {
+      background: $darker-blue;
+    }
+  }
+  &.white {
+    background: $white;
+    color: $dark-blue;
+    &.outline {
+      background: transparent;
+      border: 2px solid $white;
+      color: $white;
+    }
+    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+      &:hover {
+        background: $dark-blue;
+        color: $white;
+        &.outline {
+          background: rgba($white, .2);
+          @include boxshadow($glow-white);
+        }
+      }
+    }
+  }
+  &.gold {
+    background: $gold;
+    color: $white;
+    &.outline {
+      background: transparent;
+      border: 2px solid $gold;
+      color: $gold;
+    }
+    &.flat {
+      background: transparent;
+      color: $gold;
+    }
+    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+      &:hover {
+        background: $gold;
+        color: $white;
+        &.outline {
+          background: $gold;
+        }
+      }
+    }
+  }
+  &.orange {
+    background: $orange;
+    color: $white;
+    &.outline {
+      background: transparent;
+      border: 2px solid $orange;
+      color: $orange;
+    }
+    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+      &:hover {
+        background: $red;
+        &.outline {
+          background: rgba($orange, .5);
+        }
+      }
+    }
+  }
+  &.dark-blue {
+    background: $dark-blue;
+    color: $white;
+    &.outline {
+      background: transparent;
+      border: 2px solid $dark-blue;
+      color: $dark-blue;
+    }
+    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+      &:hover {
+        background: darken($dark-blue, 10%);
+        &.outline {
+          background: $dark-blue;
+          color: $white;
+        }
+      }
+    }
+  }
+  &.purple {
+    background: $purple;
+    color: $white;
+    &.outline {
+      background: transparent;
+      border: 2px solid $purple;
+      color: $purple;
+    }
+    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+      &:hover {
+        background: darken($purple, 10%);
+        &.outline {
+          background: rgba($purple, 0.5);
+        }
+      }
+    }
+  }
+	&.button--flat {
+		background: transparent;
+		border: 0;
+		color: $blue;
+		font-weight: 700;
+    &.gold {
+      color: $gold;
+    }
+		&:hover {
+			background: rgba($darkest-blue, .1);
+      &.gold {
+        background: rgba($gold, .1);
+      }
+		}
+	}
+  &.full-width {
+    display: block;
+  }
+	&.button--small-text {
+		@media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+			font-size: $type-smaller;
+		}
+	}
+}
+a {
+  .link-arrow {
+    margin-left: .6em;
+    transition: 400ms $transition-ease-in;
+  }
+  @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
+    &:hover {
+      .link-arrow {
+        margin-left: 1em;
+      }
+    }
+  }
+}

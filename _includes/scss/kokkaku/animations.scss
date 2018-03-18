@@ -1,0 +1,262 @@
+// slideUp ----------
+//  fades in and animates upward
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes slideUp {
+  from {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+// slideDown ----------
+//  fades in and animates downward
+@-webkit-keyframes slideDown {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+// slideRight ----------
+//  animates in from left
+@-webkit-keyframes slideRight {
+  from {
+    -webkit-transform: translateX(-6%);
+            transform: translateX(-6%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    -webkit-transform: translateX(-6%);
+            transform: translateX(-6%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+// slideLeft ----------
+//  animates in from right
+@-webkit-keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(6%);
+            transform: translateX(6%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(6%);
+            transform: translateX(6%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+// fadeIn ----------
+//  fades in smoothly
+//  dependent on .hide() and .show() functions in jQuery
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// fadeOut ----------
+//  fades out smoothly
+//  dependent on .hide() and .show() functions in jQuery
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+// glow ----------
+//   Glowing text
+@keyframes glow {
+  from {
+    text-shadow: 0 0 2px $white, 0 0 4px $white, 0 0 6px $white, 0 0 16px $blue, 0 0 26px $blue, 0 0 42 $blue, 0 0 68px $blue, 0 0 110px $blue;
+  }
+  to {
+    text-shadow: 0 0 4px $white, 0 0 6px $white, 0 0 10px $white, 0 0 16px $blue, 0 0 20px $blue, 0 0 30px $blue, 0 0 40px $blue, 0 0 60px $blue;
+  }
+}
+// salesClose1
+//   Rotate 90 degrees clockwise
+@-webkit-keyframes salesClose1 {
+  from {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+}
+@keyframes salesClose1 {
+  from {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+}
+// salesClose2
+//   Rotate 270 degrees clockwise
+@-webkit-keyframes salesClose2 {
+  from {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+@keyframes salesClose2 {
+  from {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+// Homepage scrolling trigger button ----------
+//   Sweet animation for 'visual sugar' in homepage full screen hero
+@keyframes scrollRing1 {
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+  25% {
+    width: 80px;
+    height: 80px;
+    opacity: .7;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+  }
+  75% {
+    width: 70px;
+    height: 70px;
+    opacity: .3;
+  }
+  100% {
+    width: 110px;
+    height: 110px;
+    opacity: 1;
+  }
+}
+@keyframes scrollRing2 {
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+  }
+  25% {
+    width: 110px;
+    height: 110px;
+    opacity: .5;
+  }
+  50% {
+    width: 80px;
+    height: 80px;
+    opacity: .2;
+  }
+  75% {
+    width: 120px;
+    height: 120px;
+    opacity: .8;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: .5;
+  }
+}
+.js-scroll {
+  &.slideUp,
+  &.slideDown,
+  &.slideRight,
+  &.slideLeft,
+  &.fadeIn {
+    opacity: 0;
+  }
+}
+.is-scrolled {
+  &.slideUp {
+    -webkit-animation: slideUp 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;animation: slideUp 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;
+  }
+  &.slideDown {
+    -webkit-animation: slideDown 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;animation: slideDown 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;
+  }
+  &.slideRight {
+    -webkit-animation: slideRight 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;animation: slideRight 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;
+  }
+  &.slideLeft {
+    -webkit-animation: slideLeft 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;animation: slideLeft 1000ms $transition-ease-in 1 forwards, fadeIn 600ms linear 1 forwards;
+  }
+  &.fadeIn {
+    -webkit-animation: fadeIn 600ms linear 1 forwards;animation: fadeIn 600ms linear 1 forwards;
+  }
+}

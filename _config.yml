@@ -1,0 +1,8 @@
+baseurl: ""
+repository: reignofiron/reignofiron.github.io
+exclude: ['README.md']
+permalink: pretty
+sass:
+    sass_dir: ./assets/css
+plugins:
+  - jekyll-redirect-from

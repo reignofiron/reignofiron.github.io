@@ -1,0 +1,32 @@
+// Copyright 2017, Adaptiva
+// Open Source
+// http://design.adaptiva.com
+//
+// Author: Jesse Rogers, Creative Director, Adaptiva
+// Desc: The Kokkaku (meaning "bones" or "skeleton" in Japanese) Framework is a work in pregress by the Adaptiva Design Lab to establish a central code library for front-end web development at Adaptiva.
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+{% include scss/kokkaku/color.scss %}
+{% include scss/kokkaku/breakpoints.scss %}
+{% include scss/kokkaku/boxshadow.scss %}
+{% include scss/kokkaku/transitions.scss %}
+{% include scss/kokkaku/animations.scss %}
+{% include scss/kokkaku/zindex.scss %}
+{% include scss/kokkaku/spacing.scss %}
+{% include scss/kokkaku/type.scss %}
+{% include scss/kokkaku/grid.scss %}
+{% include scss/kokkaku/rows.scss %}
+{% include scss/kokkaku/columns.scss %}
+{% include scss/kokkaku/tiles.scss %}
+{% include scss/kokkaku/button.scss %}
+{% include scss/kokkaku/basic_components.scss %}
+{% include scss/kokkaku/tertiary.scss %}
+{% include scss/kokkaku/slider.scss %}
+{% include scss/kokkaku/icons.scss %}
+{% include scss/kokkaku/nav.scss %}
+{% include scss/kokkaku/footer.scss %}

@@ -1,0 +1,14 @@
+html, body { margin: 0; padding: 0; }
+
+.roiNav { background: #222; height: 60px; overflow: hidden; }
+.roiNav ul { margin: 0; padding: 0; }
+
+.roiNav-logo { display: block; padding: 0 1rem; }
+
+.roiNav-item { display: inline-block; margin: 0; padding: 0; }
+.roiNav-item a { color: #fff; display: block; height: 60px; line-height: 60px; padding: 0 1rem; transition: 300ms ease; }
+.roiNav-item a:hover { color: #e3d081; }
+.roiNav-item:last-child a:hover { color: #fff; }
+
+.roiFooter { background: #222; overflow: hidden; padding: 4.263rem 0; }
+.roiFooter span { color: #999; }

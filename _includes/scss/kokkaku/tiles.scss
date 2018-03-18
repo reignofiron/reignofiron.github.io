@@ -1,0 +1,50 @@
+// Tile
+// Requires .overflow on parent .color-block
+.tile {
+  padding: 10px;
+  background-color: transparent;
+  transition: 400ms $transition-ease;
+  overflow: visible;
+  align-self: stretch;
+  &.js-scroll {
+    opacity: 0;
+  }
+  &.is-scrolled {
+    &:nth-child(3n+1) {
+      -webkit-animation: 600ms $transition-ease-in 1 forwards slideUp, 500ms linear 1 forwards fadeIn;
+      animation: 600ms $transition-ease-in 1 forwards slideUp, 500ms linear 1 forwards fadeIn;
+    }
+    &:nth-child(3n+2) {
+      -webkit-animation: 600ms $transition-ease-in 100ms 1 forwards slideUp, 500ms linear 100ms 1 forwards fadeIn;
+      animation: 600ms $transition-ease-in 100ms 1 forwards slideUp, 500ms linear 100ms 1 forwards fadeIn;
+    }
+    &:nth-child(3n+3) {
+      -webkit-animation: 600ms $transition-ease-in 200ms 1 forwards slideUp, 500ms linear 200ms 1 forwards fadeIn;
+      animation: 600ms $transition-ease-in 200ms 1 forwards slideUp, 500ms linear 200ms 1 forwards fadeIn;
+    }
+  }
+}
+.tile-content {
+	padding: 20px;
+	height: 100%;
+	transition: 400ms $transition-ease;
+	@include boxshadow($boxshadow-sm-10);
+	&.white {
+		background-color: $white;
+	}
+	&.light-gray {
+		background-color: $light-gray;
+	}
+	&.lighter-gray {
+		background-color: $lighter-gray;
+	}
+	&.blue {
+		background-color: $blue;
+	}
+	&.dark-black {
+		background-color: $dark-black;
+	}
+	&.green {
+		background-color: $green;
+	}
+}
