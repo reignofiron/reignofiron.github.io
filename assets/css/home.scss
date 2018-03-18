@@ -21,7 +21,9 @@
     z-index: 100;
   }
 }
-.members-header {
+.memberList-header {
+  padding: 1rem;
+  border-bottom: 2px solid #ccc;
   @media screen and (max-width: 767px) {
     display: none;
   }

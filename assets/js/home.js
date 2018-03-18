@@ -21,7 +21,7 @@ function listMembers(rsp) {
     var
       profile = rsp[i].bungieNetUserInfo,
       row = $('<div></div>'),
-      list = $('section.members').find('.content');
+      list = $('section.memberList').find('.memberList-list');
 
     console.log(rsp[i].destinyUserInfo.displayName);
 
@@ -46,7 +46,10 @@ function listMembers(rsp) {
         .appendTo(list);
 
       if (String(online) === 'true') {
-        $('#status-' + memberID).text('Online').addClass('online');
+        $('#status-' + memberID)
+        .text('Online')
+        .addClass('online')
+        .prependTo('.memberList-list');
       } else {
         $('#status-' + memberID).text('Offline').removeClass('online');
       }
