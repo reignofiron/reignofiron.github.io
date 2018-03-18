@@ -20,8 +20,14 @@ body {
   width: 100%;
   z-index: 600;
   ul {
+    height: 60px;
     margin: 0;
     padding: 0;
+  }
+  @media screen and (max-width: 1024px) {
+    ul {
+      height: auto;
+    }
   }
 }
 .roiNav-logo {

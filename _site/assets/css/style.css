@@ -4,7 +4,8 @@ html.overflow-hidden, body.overflow-hidden { overflow: hidden; }
 body { padding-top: 60px; }
 
 .roiNav { background: #222; height: 60px; position: fixed; top: 0; width: 100%; z-index: 600; }
-.roiNav ul { margin: 0; padding: 0; }
+.roiNav ul { height: 60px; margin: 0; padding: 0; }
+@media screen and (max-width: 1024px) { .roiNav ul { height: auto; } }
 
 .roiNav-logo { display: block; padding: 0 1rem; }
 @media screen and (max-width: 1024px) { .roiNav-logo { left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 100%; } }
