@@ -3,7 +3,7 @@ html.overflow-hidden, body.overflow-hidden { overflow: hidden; }
 
 body { padding-top: 60px; }
 
-.roiNav { background: #222; height: 60px; overflow: hidden; position: fixed; top: 0; width: 100%; z-index: 600; }
+.roiNav { background: #222; height: 60px; position: fixed; top: 0; width: 100%; z-index: 600; }
 .roiNav ul { margin: 0; padding: 0; }
 
 .roiNav-logo { display: block; padding: 0 1rem; }
@@ -16,9 +16,9 @@ body { padding-top: 60px; }
 .roiNav-item:last-child a:hover { color: #fff; }
 @media screen and (max-width: 1024px) { .roiNav-item { display: block; } }
 
-.roiNav ul { list-style-type: none; padding: 0; margin: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
-@media screen and (max-width: 1024px) { .roiNav ul { position: fixed; display: block; overflow-y: auto; overflow-x: hidden; width: 200px; height: 100vh; height: calc(100vh - 60px); top: 60px; right: -200px; -webkit-transition: right 600ms ease-in-out; transition: right 600ms ease-in-out; background: #222; z-index: 300; }
-  .roiNav ul.is-visible { right: 0; } }
+.roiNav nav { overflow: hidden; }
+@media screen and (max-width: 1024px) { .roiNav nav { position: fixed; display: block; overflow-y: auto; overflow-x: hidden; width: 200px; height: 100vh; height: calc(100vh - 60px); top: 60px; right: -200px; -webkit-transition: right 600ms ease-in-out; transition: right 600ms ease-in-out; background: #222; z-index: 300; }
+  .roiNav nav.is-visible { right: 0; } }
 
 .roiNav-trigger { display: none; height: 24px; width: 24px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); right: 1rem; z-index: 400; }
 .roiNav-trigger span { background-color: #fff; display: block; position: absolute; width: 24px; height: 2px; -webkit-transition: 300ms ease-in-out; transition: 300ms ease-in-out; }
