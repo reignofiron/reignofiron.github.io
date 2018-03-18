@@ -34,6 +34,9 @@
   h3 {
     margin: 0;
   }
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
 .member-icon {
   img {
@@ -41,6 +44,9 @@
     display: block;
     height: 36px;
     width: 36px;
+  }
+  @media screen and (max-width: 767px) {
+    margin: auto;
   }
 }
 span.member-online {
