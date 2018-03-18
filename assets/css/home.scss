@@ -46,7 +46,11 @@
     width: 36px;
   }
   @media screen and (max-width: 767px) {
-    margin: auto;
+    img {
+      height: 48px;
+      margin: auto;
+      width: 48px;
+    }
   }
 }
 span.member-online {
