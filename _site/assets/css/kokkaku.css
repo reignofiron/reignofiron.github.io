@@ -204,17 +204,9 @@ ol li { line-height: 1.618em; margin-left: 1.618rem; padding-left: 0.618rem; mar
   .button.white:hover.outline { background: rgba(255, 255, 255, 0.2); -webkit-box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25); -moz-box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25); box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25); } }
 .button.gold { background: #e3d081; color: #fff; }
 .button.gold.outline { background: transparent; border: 2px solid #e3d081; color: #e3d081; }
+.button.gold.outline:hover { color: #fff; }
 .button.gold.flat { background: transparent; color: #e3d081; }
-@media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.gold:hover { background: #e3d081; color: #fff; }
-  .button.gold:hover.outline { background: #e3d081; } }
-.button.orange { background: #ff902c; color: #fff; }
-.button.orange.outline { background: transparent; border: 2px solid #ff902c; color: #ff902c; }
-@media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.orange:hover { background: #C3423F; }
-  .button.orange:hover.outline { background: rgba(255, 144, 44, 0.5); } }
-.button.dark-blue { background: #073971; color: #fff; }
-.button.dark-blue.outline { background: transparent; border: 2px solid #073971; color: #073971; }
-@media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.dark-blue:hover { background: #042141; }
-  .button.dark-blue:hover.outline { background: #073971; color: #fff; } }
+@media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.gold:hover { background: #e3d081; color: #fff; } }
 .button.purple { background: #4e57f4; color: #fff; }
 .button.purple.outline { background: transparent; border: 2px solid #4e57f4; color: #4e57f4; }
 @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.purple:hover { background: #1e29f1; }

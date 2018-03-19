@@ -1,6 +1,6 @@
 var
-  apiKey = "39424dade4d141af9a0807725a14ed20", // production
-  // apiKey = "6987280b74b24575a4e805277bb5baa6", // local
+  // apiKey = "39424dade4d141af9a0807725a14ed20", // production
+  apiKey = "6987280b74b24575a4e805277bb5baa6", // local
   groupID = "2974952";
 
 $.ajax({
@@ -20,7 +20,7 @@ function listMembers(rsp) {
 
     var
       profile = rsp[i].bungieNetUserInfo,
-      row = $('<div></div>'),
+      row = $('<a></a>'),
       list = $('section.memberList').find('.memberList-list');
 
     console.log(rsp[i].destinyUserInfo.displayName);
@@ -29,30 +29,38 @@ function listMembers(rsp) {
 
       var
         name = rsp[i].destinyUserInfo.displayName,
-        joined = rsp[i].joinDate,
+        joinDate = rsp[i].joinDate,
+        joined = joinDate.substring(0, joinDate.indexOf('T')),
         online = rsp[i].isOnline,
         icon = profile.iconPath,
-        memberID = profile.membershipId;
+        memberId = profile.membershipId,
+        memberType = rsp[i].destinyUserInfo.membershipType,
+        destinyId = rsp[i].destinyUserInfo.membershipId,
+        rank = rsp[i].memberType;
 
       row
-        .addClass('j-row member vertical-center-row')
+        .attr({
+          'class': 'j-row member vertical-center-row',
+          'href': '/player/?destinyId=' + destinyId + '&memberType=' + memberType + '&name=' + name + '&icon=https://bungie.net/' + icon + '&joined=' + joined + '&rank=' + rank,
+          'title': 'See player profile for ' + name
+        })
         .html(
           '<div class="j-col j-col-1 member-icon"><img src="https://bungie.net/' + icon + '"></div>' +
           '<div class="j-col j-col-3 member-name"><h3>' + name + '</h3></div>' +
-          '<div class="j-col j-col-3 member-joined" data-label="Joined">' + joined.substring(0, joined.indexOf('T')).replace(/-/g, '/') + '</div>' +
-          '<div class="j-col j-col-3 member-status" data-label="Status"><span class="member-online" id="status-' + memberID + '">' + online + '</span></div>' +
-          '<div class="j-col j-col-3 member-button"><a class="button gold full-width" target="_blank" href="https://bungie.net/en/Profile/254/' + memberID + '">' + 'Bungie Profile' + '</a></div>'
+          '<div class="j-col j-col-3 member-joined" data-label="Joined">' + joined.replace(/-/g, '/') + '</div>' +
+          '<div class="j-col j-col-3 member-status" data-label="Status"><span class="member-online" id="status-' + memberId + '">' + online + '</span></div>' +
+          '<div class="j-col j-col-3 member-button"><a class="button outline gold full-width">' + 'View Stats' + '</a></div>'
         )
         .appendTo(list);
 
       if (String(online) === 'true') {
-        $('#status-' + memberID)
+        $('#status-' + memberId)
         .text('Online')
         .addClass('online')
         .closest('.member')
         .prependTo('.memberList-list');
       } else {
-        $('#status-' + memberID).text('Offline').removeClass('online');
+        $('#status-' + memberId).text('Offline').removeClass('online');
       }
 
     }

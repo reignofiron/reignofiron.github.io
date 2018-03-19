@@ -43,6 +43,9 @@
       background: transparent;
       border: 2px solid $gold;
       color: $gold;
+      &:hover {
+        color: $white;
+      }
     }
     &.flat {
       background: transparent;
@@ -52,44 +55,6 @@
       &:hover {
         background: $gold;
         color: $white;
-        &.outline {
-          background: $gold;
-        }
-      }
-    }
-  }
-  &.orange {
-    background: $orange;
-    color: $white;
-    &.outline {
-      background: transparent;
-      border: 2px solid $orange;
-      color: $orange;
-    }
-    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
-      &:hover {
-        background: $red;
-        &.outline {
-          background: rgba($orange, .5);
-        }
-      }
-    }
-  }
-  &.dark-blue {
-    background: $dark-blue;
-    color: $white;
-    &.outline {
-      background: transparent;
-      border: 2px solid $dark-blue;
-      color: $dark-blue;
-    }
-    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
-      &:hover {
-        background: darken($dark-blue, 10%);
-        &.outline {
-          background: $dark-blue;
-          color: $white;
-        }
       }
     }
   }
