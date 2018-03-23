@@ -1,6 +1,6 @@
 var
-  apiKey = "39424dade4d141af9a0807725a14ed20", // production
-  // apiKey = "6987280b74b24575a4e805277bb5baa6", // local
+  // apiKey = "39424dade4d141af9a0807725a14ed20", // production
+  apiKey = "6987280b74b24575a4e805277bb5baa6", // local
   groupID = "2974952";
 
 $.ajax({
@@ -9,21 +9,36 @@ $.ajax({
     "X-API-Key": apiKey
   }
 }).done(function(json) {
-  var memberList = json.Response.results;
-  console.log(memberList);
-  listMembers(memberList);
+  var members = json.Response.results;
+  console.log(members);
+  listMembers(members);
 });
 
 function listMembers(rsp) {
+
+  var
+  list = $('.memberList-list'),
+  sortMembers = function(method) {
+    // sort by date joined
+    if (method = joined) {
+      list.find('.member').sort(function(a, b) {
+        return ($(b).data('joined')) < ($(a).data('joined')) ? 1 : -1;
+      }).appendTo(list);
+    } else if (method = username) {
+      list.find('.member').sort(function(a, b) {
+        return ($(b).data('username')) < ($(a).data('username')) ? 1 : -1;
+      }).appendTo(list);
+    }
+
+    list.find('.member.online').prependTo(list);
+
+  };
 
   for (var i = 0; i < rsp.length; i++) {
 
     var
       profile = rsp[i].bungieNetUserInfo,
-      row = $('<a></a>'),
-      list = $('section.memberList').find('.memberList-list');
-
-    console.log(rsp[i].destinyUserInfo.displayName);
+      row = $('<a></a>');
 
     if (typeof profile != 'undefined') {
 
@@ -40,9 +55,12 @@ function listMembers(rsp) {
 
       row
         .attr({
-          'class': 'j-row member vertical-center-row',
+          'class': 'j-row vertical-center-row member',
           'href': '/player/?destinyId=' + destinyId + '&memberType=' + memberType + '&name=' + name + '&icon=https://bungie.net/' + icon + '&joined=' + joined + '&rank=' + rank,
-          'title': 'See player profile for ' + name
+          'title': 'See player profile for ' + name,
+          'data-joined' : joined.replace(/-/g, ''),
+          'data-username': name,
+          'data-online': 'false',
         })
         .html(
           '<div class="j-col j-col-1 member-icon"><img src="https://bungie.net/' + icon + '"></div>' +
@@ -53,15 +71,18 @@ function listMembers(rsp) {
         )
         .appendTo(list);
 
-      if (String(online) === 'true') {
-        $('#status-' + memberId)
-        .text('Online')
-        .addClass('online')
-        .closest('.member')
-        .prependTo('.memberList-list');
-      } else {
-        $('#status-' + memberId).text('Offline').removeClass('online');
-      }
+        if (String(online) === 'true') {
+          $('#status-' + memberId)
+          .text('Online')
+          .addClass('online')
+          .closest('.member')
+          .attr('data-online', true)
+          .addClass('online');
+        } else {
+          $('#status-' + memberId).text('Offline').removeClass('online');
+        }
+
+        sortMembers(joined);
 
     }
 
