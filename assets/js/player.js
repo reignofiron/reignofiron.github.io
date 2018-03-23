@@ -22,13 +22,21 @@ $(function() {
         stats = data.Response.allPvP.allTime,
         efficiency = stats.efficiency.basic.displayValue,
         kd = stats.killsDeathsRatio.basic.displayValue,
-        kda = stats.killsDeathsAssists,
+        kda = stats.killsDeathsAssists.basic.displayValue,
         kills = stats.kills.basic.displayValue,
         deaths = stats.deaths.basic.displayValue,
         assists = stats.assists.basic.displayValue,
+        precisionKills = stats.precisionKills.basic.displayValue,
         combatRating = stats.combatRating.basic.displayValue,
+        mostKills = stats.bestSingleGameKills.basic.displayValue,
+        killSpree = stats.longestKillSpree.basic.displayValue,
+        mostPrecision = stats.mostPrecisionKills.basic.displayValue,
         weapon = stats.weaponBestType.basic.displayValue,
-        clock = stats.allParticipantsTimePlayed.basic.displayValue;
+        clock = stats.allParticipantsTimePlayed.basic.displayValue,
+        hours = clock.match(/\d+/g);
+
+        totalHours = (Number(hours[0]) * 24) + Number(hours[1]);
+
         console.log(data);
 
         // Populate profile
@@ -47,14 +55,19 @@ $(function() {
 
           default: $('#player-rank').text('Iron Brigaider');
         }
-        $('#player-clock').text(clock);
+        $('#player-clock').text(totalHours + 'h');
         // Populate stats
         $('#player-efficiency').text(efficiency);
         $('#player-kd').text(kd);
+        $('#player-kda').text(kda);
         $('#player-kills').text(kills);
         $('#player-assists').text(assists);
+        $('#player-precision-kills').text(precisionKills);
         $('#player-combat-rating').text(combatRating);
         $('#player-weapon').text(weapon);
+        $('#player-kill-spree').text(killSpree);
+        $('#player-most-kills').text(mostKills);
+        $('#player-most-precision').text(mostPrecision);
       },
       error: function(data) {
         console.log(data);

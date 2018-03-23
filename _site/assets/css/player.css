@@ -9,5 +9,5 @@
 
 .player-icon { border-radius: 50%; height: 128px; width: 128px; }
 
-.playerProfile-content { background-color: #fff; padding: 1.618rem; }
+.playerProfile-content { background-color: #fff; border-radius: 3px; box-shadow: 0 2px 3px 0 lightgray; padding: 1.618rem; margin-bottom: 2.618rem; }
 .playerProfile-content h4 { color: #e3d081; font-size: .8rem; }
