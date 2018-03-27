@@ -21,10 +21,22 @@
     z-index: 100;
   }
 }
+.roiMap-search {
+  background-color: #f9f9f9;
+  padding: 1.618rem;
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e3d081;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+}
 .roiMap {
   margin-bottom: 4.263rem;
   img {
     display: block;
     width: 100%;
+    margin-bottom: 1.618rem;
   }
 }

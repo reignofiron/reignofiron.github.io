@@ -10,16 +10,19 @@
     <nav>
       <ul>
         <li class="roiNav-item">
-          <a href="{{"/" | relative_url}}" title="Reign of Iron PvP Homepage" class="roiNav-link{% if page.url == '/' %} is-current{% endif %}">Home</a>
+          <a href="{{"/" | relative_url}}" title="Reign of Iron PvP homepage" class="roiNav-link{% if page.url == '/' %} is-current{% endif %}">Home</a>
         </li>
         <li class="roiNav-item">
-          <a href="{{"/maps/" | relative_url}}" title="Reign of Iron PvP Maps" class="roiNav-link{% if page.url == '/maps/' %} is-current{% endif %}">Maps</a>
+          <a href="{{"/roster/" | relative_url}}" title="Reign of Iron PvP current roster" class="roiNav-link{% if page.url == '/roster/' %} is-current{% endif %}">Roster</a>
         </li>
         <li class="roiNav-item">
-          <a href="{{"/videos/" | relative_url}}" title="About Reign of Iron" class="roiNav-link{% if page.url == '/videos/' %} is-current{% endif %}">Videos</a>
+          <a href="{{"/maps/" | relative_url}}" title="Reign of Iron PvP maps" class="roiNav-link{% if page.url == '/maps/' %} is-current{% endif %}">Maps</a>
         </li>
         <li class="roiNav-item">
-          <a href="https://www.bungie.net/en/ClanV2/Chat?groupid=2974952" style="border-radius:0;" class="button gold" target="_blank" rel="noopener" title="Join Reign of Iron!">Join Us</a>
+          <a href="{{"/videos/" | relative_url}}" title="Gameplay videos from our members" class="roiNav-link{% if page.url == '/videos/' %} is-current{% endif %}">Videos</a>
+        </li>
+        <li class="roiNav-item">
+          <a href="https://www.bungie.net/en/ClanV2/Chat?groupid=2974952" style="border-radius:0;" class="button" target="_blank" rel="noopener" title="Join Reign of Iron!">Join Us</a>
         </li>
       </ul>
     </nav>

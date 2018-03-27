@@ -10,7 +10,7 @@ $.ajax({
   }
 }).done(function(json) {
   var members = json.Response.results;
-  console.log(members);
+  console.log('Member list:', members);
   listMembers(members);
 });
 
@@ -38,7 +38,7 @@ function listMembers(rsp) {
 
     var
       profile = rsp[i].bungieNetUserInfo,
-      row = $('<a></a>');
+      member = $('<a></a>');
 
     if (typeof profile != 'undefined') {
 
@@ -53,14 +53,15 @@ function listMembers(rsp) {
         destinyId = rsp[i].destinyUserInfo.membershipId,
         rank = rsp[i].memberType;
 
-      row
+      member
         .attr({
           'class': 'j-row vertical-center-row member',
-          'href': '/player/?destinyId=' + destinyId + '&memberType=' + memberType + '&name=' + name + '&icon=https://bungie.net/' + icon + '&joined=' + joined + '&rank=' + rank,
+          'href': '/player/?bungieId=' + memberId + '&destinyId=' + destinyId + '&joined=' + joined + '&rank=' + rank,
           'title': 'See player profile for ' + name,
           'data-joined' : joined.replace(/-/g, ''),
           'data-username': name,
-          'data-online': 'false',
+          'data-online' : 'false',
+          'data-searchable' : name,
         })
         .html(
           '<div class="j-col j-col-1 member-icon"><img src="https://bungie.net/' + icon + '"></div>' +

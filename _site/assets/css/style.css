@@ -14,7 +14,7 @@ body { padding-top: 60px; }
 .roiNav-item a { color: #fff; display: block; height: 60px; line-height: 60px; padding: 0 1rem; transition: 300ms ease; }
 .roiNav-item a.is-current { color: #e3d081; }
 .roiNav-item a:hover { color: #e3d081; }
-.roiNav-item:last-child a:hover { color: #fff; }
+.roiNav-item:last-child a, .roiNav-item:last-child a:hover { color: #333; }
 @media screen and (max-width: 1024px) { .roiNav-item { display: block; } }
 
 .roiNav nav { overflow: hidden; }

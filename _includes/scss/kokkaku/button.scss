@@ -1,7 +1,7 @@
 .button {
-	background: $blue;
+	background: $gold;
 	border-radius: 3px;
-	color: $white;
+	color: $black;
 	cursor: pointer;
   display: inline-block;
   font-size: 0.8em;
@@ -14,7 +14,7 @@
 	text-transform: uppercase;
   @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
     &:hover {
-      background: $darker-blue;
+      background: darken($gold, 10%);
     }
   }
   &.white {
@@ -27,7 +27,7 @@
     }
     @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
       &:hover {
-        background: $dark-blue;
+        background: $black;
         color: $white;
         &.outline {
           background: rgba($white, .2);
@@ -43,9 +43,6 @@
       background: transparent;
       border: 2px solid $gold;
       color: $gold;
-      &:hover {
-        color: $white;
-      }
     }
     &.flat {
       background: transparent;
@@ -55,22 +52,8 @@
       &:hover {
         background: $gold;
         color: $white;
-      }
-    }
-  }
-  &.purple {
-    background: $purple;
-    color: $white;
-    &.outline {
-      background: transparent;
-      border: 2px solid $purple;
-      color: $purple;
-    }
-    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
-      &:hover {
-        background: darken($purple, 10%);
         &.outline {
-          background: rgba($purple, 0.5);
+          color: $gold;
         }
       }
     }

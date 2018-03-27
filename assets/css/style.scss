@@ -60,10 +60,9 @@ body {
     }
   }
   &:last-child {
-    a {
-      &:hover {
-        color: #fff;
-      }
+    a,
+    a:hover {
+      color: #333;
     }
   }
   @media screen and (max-width: 1024px) {

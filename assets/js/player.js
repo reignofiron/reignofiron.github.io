@@ -4,16 +4,14 @@ $(function() {
     apiKey = "39424dade4d141af9a0807725a14ed20", // production
     // apiKey = "6987280b74b24575a4e805277bb5baa6", // local
     groupID = "2974952",
+    bungieId = checkParams('bungieId'),
     destinyId = checkParams('destinyId'),
-    memberType = checkParams('memberType'),
-    name = checkParams('name'),
-    icon = checkParams('icon'),
     joined = checkParams('joined'),
     rank = checkParams('rank');
 
-  if (destinyId && memberType && name && icon) {
+  if (bungieId && destinyId && joined && rank) {
     $.ajax({
-      url: "https://www.bungie.net/Platform/Destiny2/" + memberType + "/Account/" + destinyId + "/Character/0/Stats/",
+      url: "https://www.bungie.net/Platform/Destiny2/4/Account/" + destinyId + "/Character/0/Stats/",
       headers: {
         "X-API-Key": apiKey
       },
@@ -37,26 +35,10 @@ $(function() {
 
         totalHours = (Number(hours[0]) * 24) + Number(hours[1]);
 
-        console.log(data);
+        console.log('Player stats:', data);
 
-        // Populate profile
-        $('#player-title').text(name);
-        $('.player-icon').attr({
-          'src': icon
-        });
-        $('#player-join-date').text(joined.replace(/-/g, '/'));
-        switch(rank) {
-
-          case '3': $('#player-rank').text('Iron Officer')
-          break;
-
-          case '5': $('#player-rank').text('Iron General');
-          break;
-
-          default: $('#player-rank').text('Iron Brigaider');
-        }
-        $('#player-clock').text(totalHours + 'h');
         // Populate stats
+        $('#player-clock').text(totalHours + 'h');
         $('#player-efficiency').text(efficiency);
         $('#player-kd').text(kd);
         $('#player-kda').text(kda);
@@ -70,7 +52,46 @@ $(function() {
         $('#player-most-precision').text(mostPrecision);
       },
       error: function(data) {
-        console.log(data);
+        console.log('Error loading player stats:', data);
+      }
+    });
+
+    $.ajax({ // get Bungie Profile
+      url: "https://www.bungie.net/Platform/User/GetBungieNetUserById/" + bungieId + "/",
+      headers: {
+        "X-API-Key": apiKey
+      },
+      success: function(data) {
+        console.log('Player profile:', data);
+        var
+        response = data.Response,
+        about = response.about,
+        banner = response.profileThemeName,
+        icon = response.profilePicturePath,
+        name = response.displayName;
+
+        // Populate profile
+        $('.hero#player-hero').css({
+          'background-image': 'url("https://bungie.net/img/UserThemes/' + banner + '/header.jpg")'
+        })
+        $('#player-title').text(name);
+        $('.player-icon').attr({
+          'src': 'https://www.bungie.net' + icon
+        });
+        $('#player-join-date').text(joined.replace(/-/g, '/'));
+        switch(rank) {
+
+          case '3': $('#player-rank').text('Iron Officer')
+          break;
+
+          case '5': $('#player-rank').text('Iron General');
+          break;
+
+          default: $('#player-rank').text('Iron Brigaider');
+        }
+      },
+      error: function(data) {
+        console.log('Error loading player profile:', data);
       }
     });
   }

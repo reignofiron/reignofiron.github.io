@@ -10,13 +10,24 @@ style:
     <p class="gray">PvP maps for strategic use (<a href="https://twitter.com/r3likt" target="_blank" rel="noopener">thanks @r3likt</a>)</p>
   </div>
 </section>
+<section class="roiMap-search">
+  <div class="content j-row vertical-center-row">
+    <div class="j-col j-col-3">
+      <h4>Search Maps</h4>
+    </div>
+    <div class="j-col j-col-9">
+      <input type="text" data-scope="roiMap" data-container="roiMap-container" class="search" placeholder="Search maps">
+    </div>
+  </div>
+</section>
 <section class="color-block white">
   <div class="content">
-    <div class="j-col j-col-12">
+    <div class="j-col j-col-12 roiMap-container">
       {% for map in site.data.maps %}
-      <div class="roiMap">
+      <div class="roiMap" data-searchable="{{map.title}}">
         <h2>{{map.title}}</h2>
         <img src="/assets/img/maps/{{map.img}}-destiny-2-map.jpg" alt="">
+        <a href="/assets/img/maps/original/{{map.img}}-destiny-2-map.jpg" class="button gold" target="_blank" rel="noopener" title="View full size, original image">View Large</a>
       </div>
       {% endfor %}
     </div>
