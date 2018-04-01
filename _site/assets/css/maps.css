@@ -4,7 +4,7 @@
 .hero#roi-maps-banner::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 100; }
 
 .roiMap-search { background-color: #f9f9f9; padding: 1.618rem; }
-.roiMap-search input { background: transparent; border: none; border-bottom: 2px solid #e3d081; -webkit-appearance: none; width: 100%; }
+.roiMap-search input { background: transparent; border: none; border-bottom: 2px solid #e3d081; border-radius: 0 !important; -webkit-appearance: none; width: 100%; }
 
 .roiMap { margin-bottom: 4.263rem; }
 .roiMap img { display: block; width: 100%; margin-bottom: 1.618rem; }

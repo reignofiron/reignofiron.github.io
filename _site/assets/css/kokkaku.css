@@ -206,7 +206,7 @@ ol li { line-height: 1.618em; margin-left: 1.618rem; padding-left: 0.618rem; mar
 .button.gold.outline { background: transparent; border: 2px solid #e3d081; color: #e3d081; }
 .button.gold.flat { background: transparent; color: #e3d081; }
 @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.gold:hover { background: #e3d081; color: #fff; }
-  .button.gold:hover.outline { color: #e3d081; } }
+  .button.gold:hover.outline { color: #fff; } }
 .button.button--flat { background: transparent; border: 0; color: #0860b8; font-weight: 700; }
 .button.button--flat.gold { color: #e3d081; }
 .button.button--flat:hover { background: rgba(4, 29, 57, 0.1); }

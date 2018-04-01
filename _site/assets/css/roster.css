@@ -13,7 +13,7 @@
 .memberList-header { padding: 1rem; border-bottom: 2px solid #ccc; }
 @media screen and (max-width: 767px) { .memberList-header { display: none; } }
 
-.memberList-search input { border: 0; border-bottom: 2px solid #e3d081; display: block; padding: .618rem 0; width: 100%; }
+.memberList-search input { border: 0; border-bottom: 2px solid #e3d081; border-radius: 0 !important; display: block; padding: .618rem 0; width: 100%; }
 @media screen and (max-width: 767px) { .memberList-search input { text-align: center; } }
 
 .member { border-bottom: 2px solid #ccc; padding: 1rem; }

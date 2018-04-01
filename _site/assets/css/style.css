@@ -8,7 +8,13 @@ body { padding-top: 60px; }
 @media screen and (max-width: 1024px) { .roiNav ul { height: auto; } }
 
 .roiNav-logo { display: block; padding: 0 1rem; }
-@media screen and (max-width: 1024px) { .roiNav-logo { left: 50%; padding: 0; position: absolute; top: 50%; transform: translate(-50%, -50%); } }
+@media screen and (max-width: 1024px) { .roiNav-logo { left: 1rem; padding: 0; position: absolute; top: 50%; transform: translateY(-50%); } }
+.roiNav-logo svg, .roiNav-logo strong { display: inline-block; vertical-align: middle; }
+.roiNav-logo svg { margin-right: .618rem; }
+.roiNav-logo .roi-logo { fill: #e3d081; margin-right: 10px; transition: 300ms ease; }
+.roiNav-logo strong { color: #e3d081; font-size: 1.618rem; transition: 300ms ease; }
+.roiNav-logo:hover .roi-logo { fill: #dac057; }
+.roiNav-logo:hover strong { color: #dac057; }
 
 .roiNav-item { display: inline-block; margin: 0; padding: 0; }
 .roiNav-item a { color: #fff; display: block; height: 60px; line-height: 60px; padding: 0 1rem; transition: 300ms ease; }

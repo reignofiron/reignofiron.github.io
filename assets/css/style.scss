@@ -34,11 +34,37 @@ body {
   display: block;
   padding: 0 1rem;
   @media screen and (max-width: 1024px) {
-    left: 50%;
+    left: 1rem;
     padding: 0;
     position: absolute;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateY(-50%);
+  }
+  svg,
+  strong {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  svg {
+    margin-right: .618rem;
+  }
+  .roi-logo {
+    fill: #e3d081;
+    margin-right: 10px;
+    transition: 300ms ease;
+  }
+  strong {
+    color: #e3d081;
+    font-size: 1.618rem;
+    transition: 300ms ease;
+  }
+  &:hover {
+    .roi-logo {
+      fill: #dac057;
+    }
+    strong {
+      color: #dac057;
+    }
   }
 }
 .roiNav-item {
