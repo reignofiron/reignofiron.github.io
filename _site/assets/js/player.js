@@ -45,7 +45,6 @@ $(function() {
         $('#player-kills').text(kills);
         $('#player-assists').text(assists);
         $('#player-precision-kills').text(precisionKills);
-        $('#player-combat-rating').text(combatRating);
         $('#player-weapon').text(weapon);
         $('#player-kill-spree').text(killSpree);
         $('#player-most-kills').text(mostKills);
