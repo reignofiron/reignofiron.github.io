@@ -1,5 +1,20 @@
 ---
 ---
+#loading {
+  background: rgba(white, .9);
+  left: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 section.hero#raids-hero {
   background-image: url('/assets/img/reign-of-iron-raids-banner.jpg');
   position: relative;

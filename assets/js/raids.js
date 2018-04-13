@@ -105,6 +105,7 @@ $('.signupSheet').each(function() {
 /* Signup Form Submission */
 $('form.signupForm').submit(function(e) {
   e.preventDefault();
+  $('#loading').fadeIn();
   var
     freeFromHour = $(this).find('select.freeFromHour').val(),
     freeFromMinutes = $(this).find('select.freeFromMinutes').val(),
@@ -128,6 +129,7 @@ $('form.signupForm').submit(function(e) {
         data: $form.serializeObject(),
         success: function(response) {
           console.log(response);
+          $('#loading').fadeOut();
           alert('Nice, you\'ve been added to the list for ' + $form.closest('.signupSheet').attr('id') + ', ' + name + '!');
           $form.closest('.signupSheet')
           .find('.signupSheet-empty')

@@ -1,6 +1,6 @@
 var
   apiKey = "39424dade4d141af9a0807725a14ed20", // production
-// apiKey = "6987280b74b24575a4e805277bb5baa6" // local,
+// apiKey = "6987280b74b24575a4e805277bb5baa6", // local
 groupID = "2974952"
 ,
   days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -106,6 +106,7 @@ $('.signupSheet').each(function() {
 /* Signup Form Submission */
 $('form.signupForm').submit(function(e) {
   e.preventDefault();
+  $('#loading').fadeIn();
   var
     freeFromHour = $(this).find('select.freeFromHour').val(),
     freeFromMinutes = $(this).find('select.freeFromMinutes').val(),
@@ -129,6 +130,7 @@ $('form.signupForm').submit(function(e) {
         data: $form.serializeObject(),
         success: function(response) {
           console.log(response);
+          $('#loading').fadeOut();
           alert('Nice, you\'ve been added to the list for ' + $form.closest('.signupSheet').attr('id') + ', ' + name + '!');
           $form.closest('.signupSheet')
           .find('.signupSheet-empty')
