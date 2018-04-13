@@ -211,7 +211,7 @@ ol li { line-height: 1.618em; margin-left: 1.618rem; padding-left: 0.618rem; mar
 .button.button--flat.gold { color: #e3d081; }
 .button.button--flat:hover { background: rgba(4, 29, 57, 0.1); }
 .button.button--flat:hover.gold { background: rgba(227, 208, 129, 0.1); }
-.button.full-width { display: block; }
+.button.full-width { display: block; width: 100%; }
 @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) { .button.button--small-text { font-size: 0.618rem; } }
 
 a .link-arrow { margin-left: .6em; transition: 400ms cubic-bezier(0.13, 0.78, 0.3, 0.99); }

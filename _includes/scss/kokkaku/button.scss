@@ -75,6 +75,7 @@
 	}
   &.full-width {
     display: block;
+		width: 100%;
   }
 	&.button--small-text {
 		@media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {

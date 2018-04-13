@@ -1,0 +1,30 @@
+section.hero#raids-hero { background-image: url("/assets/img/reign-of-iron-raids-banner.jpg"); position: relative; }
+section.hero#raids-hero .hero-content { z-index: 200; }
+section.hero#raids-hero h1 { margin-top: 0; }
+section.hero#raids-hero::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65); z-index: 100; }
+
+@media screen and (max-width: 767px) { .signupSheet-title { text-align: center; } }
+
+.signupSheet { margin-bottom: 2.618rem; }
+
+.signupSheet-wrap { background: #fff; background: #fff; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+
+.signupSheet-empty { padding: 2.618rem; text-align: center; }
+
+.signupSheet-header { background: #e3d081; }
+@media screen and (max-width: 767px) { .signupSheet-header { display: none; } }
+
+.signupSheet-entry { border-bottom: 2px solid #eee; padding: 1rem 0; }
+.signupSheet-entry:last-child { border-bottom: 0; }
+@media screen and (max-width: 767px) { .signupSheet-entry > div { padding-left: 40%; position: relative; }
+  .signupSheet-entry > div::before { color: #999; content: attr(data-th); font-size: .618rem; font-weight: 300; left: 0; padding: 0 1rem; position: absolute; top: 0; } }
+
+.signupSheet-player { font-weight: 700; }
+
+form.signupForm { background: #222; padding: 1rem 0; }
+form.signupForm input, form.signupForm select { background: transparent; border: 0; border-bottom: 2px solid #e3d081; border-radius: 0; color: #fff; font-size: .8rem; padding: 0 0 .16em; -webkit-appearance: none; }
+form.signupForm select { padding: 0 .26em .16em; }
+form.signupForm select option { color: #222; }
+form.signupForm label { color: #fff; margin-right: 1rem; }
+form.signupForm button { border: 0; -webkit-appearance: none; }
+form.signupForm span { color: #fff; }

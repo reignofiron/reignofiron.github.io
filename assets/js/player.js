@@ -1,9 +1,9 @@
+---
+---
 $(function() {
 
   var
-    apiKey = "39424dade4d141af9a0807725a14ed20", // production
-    // apiKey = "6987280b74b24575a4e805277bb5baa6", // local
-    groupID = "2974952",
+    {% include js/api.js %},
     bungieId = checkParams('bungieId'),
     destinyId = checkParams('destinyId'),
     joined = checkParams('joined'),
@@ -66,8 +66,9 @@ $(function() {
         response = data.Response,
         about = response.about,
         banner = response.profileThemeName,
+        blizzard = response.blizzardDisplayName,
         icon = response.profilePicturePath,
-        name = response.displayName;
+        name = blizzard.substring(0, blizzard.indexOf('#'));
 
         // Populate profile
         $('.hero#player-hero').css({
