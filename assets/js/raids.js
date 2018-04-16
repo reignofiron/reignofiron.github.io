@@ -1,7 +1,7 @@
 ---
 ---
 var
-	{% include js / api.js %},
+	{% include js/api.js %},
 	days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	weekMap = {},
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',

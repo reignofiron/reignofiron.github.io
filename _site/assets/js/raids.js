@@ -1,7 +1,8 @@
--- -
--- -
 var
-	{% include js / api.js %},
+	apiKey = "39424dade4d141af9a0807725a14ed20", // production
+// apiKey = "6987280b74b24575a4e805277bb5baa6", // local
+groupID = "2974952"
+,
 	days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	weekMap = {},
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',
