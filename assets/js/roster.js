@@ -3,6 +3,7 @@
 var
   {% include js/api.js %};
 
+// get list of members and populate roster table
 $.ajax({
   url: "https://www.bungie.net/platform/GroupV2/" + groupID + "/Members/",
   headers: {
@@ -40,8 +41,10 @@ function listMembers(rsp) {
       profile = rsp[i].bungieNetUserInfo,
       member = $('<a></a>');
 
+		// check for valid profile
+		// some users don't have Bungie profiles somehow and it breaks function
     if (typeof profile != 'undefined') {
-
+			// store response data in semantic variables
       var
         name = rsp[i].destinyUserInfo.displayName,
         joinDate = rsp[i].joinDate,
@@ -52,7 +55,7 @@ function listMembers(rsp) {
         memberType = rsp[i].destinyUserInfo.membershipType,
         destinyId = rsp[i].destinyUserInfo.membershipId,
         rank = rsp[i].memberType;
-
+			// configure DOM node and add to page
       member
         .attr({
           'class': 'j-row vertical-center-row member',
@@ -71,19 +74,19 @@ function listMembers(rsp) {
           '<div class="j-col j-col-3 member-button"><a class="button outline gold full-width">' + 'View Stats' + '</a></div>'
         )
         .appendTo(list);
+			// indicate online/offline status
+      if (String(online) === 'true') {
+        $('#status-' + memberId)
+        .text('Online')
+        .addClass('online')
+        .closest('.member')
+        .attr('data-online', true)
+        .addClass('online');
+      } else {
+        $('#status-' + memberId).text('Offline').removeClass('online');
+      }
 
-        if (String(online) === 'true') {
-          $('#status-' + memberId)
-          .text('Online')
-          .addClass('online')
-          .closest('.member')
-          .attr('data-online', true)
-          .addClass('online');
-        } else {
-          $('#status-' + memberId).text('Offline').removeClass('online');
-        }
-
-        sortMembers(joined);
+      sortMembers(joined); // sort members by join date
 
     }
 
