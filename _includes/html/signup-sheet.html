@@ -13,34 +13,34 @@
       <h3 class="black">No one signed up yet!</h3>
     </div>
     <div class="signupSheet-content"></div>
+		<form class="signupForm" data-postto="{{include.postto}}">
+	    <div class="j-row vertical-center-row">
+	      <div class="j-col j-col-4">
+	        <label for="player_name" title="Your Battletag">Name</label>
+	        <input type="text" name="player_name" placeholder="xROI_fanGurl69x" required>
+	      </div>
+				<fieldset class="signupForm-checkboxes j-col j-col-6" style="border: 0; padding: 0;">
+					<div class="j-col j-col-3">
+						<legend>Raid Times</legend>
+					</div>
+					<div class="j-col j-col-3">
+						<input type="checkbox" class="signupForm-checkbox" name="8am" id="8am-raid" value="8:00am">
+						<label for="8am">8:00am</label>
+					</div>
+					<div class="j-col j-col-3">
+						<input type="checkbox" class="signupForm-checkbox" name="1pm" id="1pm-raid" value="1:00pm">
+						<label for="1pm">1:00pm</label>
+					</div>
+					<div class="j-col j-col-3">
+						<input type="checkbox" class="signupForm-checkbox" name="6pm" id="6pm-raid" value="6:00pm">
+						<label for="6pm">6:00pm</label>
+					</div>
+				</fieldset>
+	      <div class="j-col j-col-2 push-1">
+	        <button type="submit" class="button full-width">Sign Up</button>
+	      </div>
+	    </div>
+	    <input type="hidden" name="time_frame">
+	  </form>
   </div>
-  <form class="signupForm" data-postto="{{include.postto}}">
-    <div class="j-row vertical-center-row">
-      <div class="j-col j-col-4">
-        <label for="player_name" title="Your Battletag">Name</label>
-        <input type="text" name="player_name" placeholder="xROI_fanGurl69x" required>
-      </div>
-			<fieldset class="signupForm-checkboxes j-col j-col-6" style="border: 0; padding: 0;">
-				<div class="j-col j-col-3">
-					<legend>Raid Times</legend>
-				</div>
-				<div class="j-col j-col-3">
-					<input type="checkbox" class="signupForm-checkbox" name="8am" id="8am-raid" value="8:00am">
-					<label for="8am">8:00am</label>
-				</div>
-				<div class="j-col j-col-3">
-					<input type="checkbox" class="signupForm-checkbox" name="1pm" id="1pm-raid" value="1:00pm">
-					<label for="1pm">1:00pm</label>
-				</div>
-				<div class="j-col j-col-3">
-					<input type="checkbox" class="signupForm-checkbox" name="6pm" id="6pm-raid" value="6:00pm">
-					<label for="6pm">6:00pm</label>
-				</div>
-			</fieldset>
-      <div class="j-col j-col-2 push-1">
-        <button type="submit" class="button full-width">Sign Up</button>
-      </div>
-    </div>
-    <input type="hidden" name="time_frame">
-  </form>
 </div>

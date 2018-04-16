@@ -173,7 +173,7 @@ $('form.signupForm').submit(function(e) {
 
 		console.log('Error: no record of ' + name + ' in Reign of Iron roster.');
 		alert('Sorry, no record of ' + name + ' in the Reign of Iron roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
-
+		$('#loading').fadeOut();
 	}
 
 });
