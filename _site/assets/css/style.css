@@ -10,7 +10,7 @@ body { padding-top: 60px; }
 .roiNav-logo { display: block; padding: 0 1rem; transition: 300ms ease; }
 @media screen and (max-width: 1024px) { .roiNav-logo { left: 1rem; padding: 0; position: absolute; top: 50%; transform: translateY(-50%); } }
 .roiNav-logo img, .roiNav-logo strong { display: inline-block; vertical-align: middle; }
-.roiNav-logo img { margin-right: 0.618rem; width: 26px; }
+.roiNav-logo img { margin-right: 0.618rem; }
 .roiNav-logo strong { color: #e3d081; font-size: 1.618rem; }
 .roiNav-logo:hover { opacity: .8; }
 
