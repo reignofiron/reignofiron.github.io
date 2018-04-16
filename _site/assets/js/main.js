@@ -7,7 +7,7 @@ $(function() {
     $('html, body').toggleClass('overflow-hidden')
 
   });
-
+	/* Search/filter component */
   $('input.search').on('input', function(e) {
 
     var
@@ -20,15 +20,14 @@ $(function() {
       var
       $this = $(this),
       name = $this.data('searchable').toLowerCase();
-
-      for (var i = 0; i < scope.length; i++) { // loop through query words
-
-        if (name.indexOf(filter) > -1) { // if current word in q finds match in title
+			// loop through query words
+      for (var i = 0; i < scope.length; i++) {
+				// if current word in q finds match in title
+        if (name.indexOf(filter) > -1) {
           $this.show()
         } else {
           $this.hide();
         }
-
       }
 
     }); // end scope loop

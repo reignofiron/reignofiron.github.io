@@ -33,6 +33,7 @@ body {
 .roiNav-logo {
   display: block;
   padding: 0 1rem;
+	transition: 300ms ease;
   @media screen and (max-width: 1024px) {
     left: 1rem;
     padding: 0;
@@ -40,31 +41,21 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  svg,
+  img,
   strong {
     display: inline-block;
     vertical-align: middle;
   }
-  svg {
-    margin-right: .618rem;
-  }
-  .roi-logo {
-    fill: #e3d081;
-    margin-right: 10px;
-    transition: 300ms ease;
-  }
+	img {
+		margin-right: 0.618rem;
+		width: 26px;
+	}
   strong {
     color: #e3d081;
     font-size: 1.618rem;
-    transition: 300ms ease;
   }
   &:hover {
-    .roi-logo {
-      fill: #dac057;
-    }
-    strong {
-      color: #dac057;
-    }
+    opacity: .8;
   }
 }
 .roiNav-item {
