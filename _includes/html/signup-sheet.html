@@ -16,68 +16,27 @@
   </div>
   <form class="signupForm" data-postto="{{include.postto}}">
     <div class="j-row vertical-center-row">
-      <div class="j-col j-col-3">
+      <div class="j-col j-col-4">
         <label for="player_name" title="Your Battletag">Name</label>
         <input type="text" name="player_name" placeholder="xROI_fanGurl69x" required>
       </div>
-      <div class="j-col j-col-3">
-        <label for="free_from" title="When you can sign on">Free From</label>
-        <select name="free_from_hour" class="freeFromHour" required>
-          <option value=""></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-        </select>
-        <span>:</span>
-        <select name="free_from_minutes" class="freeFromMinutes" required>
-          <option value="00">00</option>
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="45">45</option>
-        </select>
-        <select name="free_from_ampm" class="freeFromAmPm">
-          <option value="am">AM</option>
-          <option value="pm">PM</option>
-        </select>
-      </div>
-      <div class="j-col j-col-3">
-        <label for="free_until" title="When you have to sign off">Free Until</label>
-        <select name="free_until_hour" class="freeUntilHour" required>
-          <option value=""></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-        </select>
-        <span>:</span>
-        <select name="free_until_minutes" class="freeUntilMinutes" required>
-          <option value="00">00</option>
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="45">45</option>
-        </select>
-        <select name="free_until_ampm" class="freeUntilAmPm" required>
-          <option value="am">AM</option>
-          <option value="pm">PM</option>
-        </select>
-      </div>
+			<fieldset class="signupForm-checkboxes j-col j-col-6" style="border: 0; padding: 0;">
+				<div class="j-col j-col-3">
+					<legend>Raid Times</legend>
+				</div>
+				<div class="j-col j-col-3">
+					<input type="checkbox" class="signupForm-checkbox" name="8am" id="8am-raid" value="8:00am">
+					<label for="8am">8:00am</label>
+				</div>
+				<div class="j-col j-col-3">
+					<input type="checkbox" class="signupForm-checkbox" name="1pm" id="1pm-raid" value="1:00pm">
+					<label for="1pm">1:00pm</label>
+				</div>
+				<div class="j-col j-col-3">
+					<input type="checkbox" class="signupForm-checkbox" name="6pm" id="6pm-raid" value="6:00pm">
+					<label for="6pm">6:00pm</label>
+				</div>
+			</fieldset>
       <div class="j-col j-col-2 push-1">
         <button type="submit" class="button full-width">Sign Up</button>
       </div>

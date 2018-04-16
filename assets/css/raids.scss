@@ -88,7 +88,7 @@ section.hero#raids-hero {
 form.signupForm {
   background: #222;
   padding: 1rem 0;
-  input,
+  input[type="text"],
   select {
     background: transparent;
     border: 0;
@@ -105,6 +105,13 @@ form.signupForm {
       color: #222;
     }
   }
+	.signupForm-checkboxes {
+		border: 0;
+		padding: 0;
+		legend {
+			color: #fff;
+		}
+	}
   label {
     color: #fff;
     margin-right: 1rem;
