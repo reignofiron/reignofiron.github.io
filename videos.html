@@ -9,8 +9,8 @@ style:
   <div class="content hero-content">
     <div class="j-col j-col-12 centered">
       <h1 class="white">Videos</h1>
-      <p class="gray">Crucible and Vanguard highlights from our members</p>
-      <a href="https://www.bungie.net/en/ClanV2/Chat?groupid=2974952" class="button gold" target="_blank" rel="noopener" title="Join Reign of Iron on PC">Join the Clan</a>
+      <p class="gray">Destiny 2Crucible and Vanguard highlights from our members</p>
+      <a href="https://www.bungie.net/en/ClanV2/Chat?groupid=2974952" class="button gold" target="_blank" rel="noopener" title="Join Reign of Iron on Destiny 2 for PC">Join the Clan</a>
     </div>
   </div>
 </section>
@@ -18,7 +18,6 @@ style:
   <div class="content">
     <div class="j-col j-col-8 push-2 centered">
       {% for video in site.data.videos %}
-
           {% if video.platform == "instagram" %}
           <div class="roiVideo instagram">
             <h3>{{video.title}}</h3>
@@ -30,7 +29,7 @@ style:
           <div class="roiVideo youtube">
             <h3>{{video.title}}</h3>
             <p class="gray">By {{video.player}}</p>
-            <div class="responsive-video">
+            <div class="responsive-video" title="Destiny 2 Video: {{video.title}}">
               <iframe src="https://www.youtube.com/embed/{{video.source}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
