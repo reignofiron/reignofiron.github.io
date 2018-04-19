@@ -7,7 +7,7 @@ var
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',
 	today = new Date().getDay(),
 	sortedDays = days.slice(today).concat(days.slice(0, today)),
-	userNames = [];
+	userNames = [],
 	checkName = function(name) {
 
 		var m = false; // flag
@@ -67,44 +67,59 @@ $('.signupSheet').sort(function(a, b) {
 /* Load Data for Signups */
 $('.signupSheet').each(function() {
 	var
-		day = $(this).attr('id'),
-		sheet = $(this).data('sheet'),
-		$this = $(this),
-		url = 'https://spreadsheets.google.com/feeds/list/' + sheet + '/od6/public/basic?alt=json';
+	day = $(this).attr('id'),
+	eow = 'https://spreadsheets.google.com/feeds/list/' + $(this).data('eow') + '/od6/public/basic?alt=json',
+	leviathan = 'https://spreadsheets.google.com/feeds/list/' + $(this).data('leviathan') + '/od6/public/basic?alt=json',
+	eowSignups = [],
+	levSignups = [],
+	$this = $(this),
+	populateSignups = function(list, raid) {
+		if (list.length > 0) {
+			// hide the "no one signed up" thing
+			$this.find('.signupSheet-wrap.' + raid + '-signup').find('.signupSheet-empty').hide();
+			// populate data for signup
+			$.each(list, function(i) {
+				console.log('Player signed up for ' + day + ':', list[i]);
+				$this.find('.signupSheet-wrap.' + raid + '-signup').find('.signupSheet-content').append(
+					'<div class="j-row signupSheet-entry">' +
+					'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + list[i].name + '</span></div>' +
+					'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + list[i].available + '</span></div>' +
+					'</div>'
+				);
+			});
+		}
+	};
 
 	$.ajax({
-		url: url,
+		url: leviathan,
 		success: function(response) {
-			var
-				data = response.feed.entry,
-				parsedData = [];
-
+			var data = response.feed.entry;
 			// parse Google sheets data into more manageable format
 			$.each(data, function(i) {
-				parsedData.push({
+				levSignups.push({
 					name: data[i].title.$t,
 					available: data[i].content.$t.replace('timeframe: ', ''),
 				});
 			});
-
-			// if anyone is signed up
-			if (parsedData.length > 0) {
-				// hide the "no one signed up" thing
-				$this.find('.signupSheet-empty').hide();
-				// populate data for signup
-				$.each(parsedData, function(i) {
-					console.log('Player signed up for ' + day + ':', parsedData[i]);
-					$this.find('.signupSheet-content').append(
-						'<div class="j-row signupSheet-entry">' +
-						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + parsedData[i].name + '</span></div>' +
-						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + parsedData[i].available + '</span></div>' +
-						'</div>'
-					);
-				});
-			}
+			populateSignups(levSignups, 'leviathan');
 		}
-
 	});
+
+	$.ajax({
+		url: eow,
+		success: function(response) {
+			var data = response.feed.entry;
+			// parse Google sheets data into more manageable format
+			$.each(data, function(i) {
+				eowSignups.push({
+					name: data[i].title.$t,
+					available: data[i].content.$t.replace('timeframe: ', ''),
+				});
+			});
+			populateSignups(eowSignups, 'eow');
+		}
+	});
+
 });
 
 /* Signup Form Submission */
@@ -175,5 +190,32 @@ $('form.signupForm').submit(function(e) {
 		alert('Sorry, no record of ' + name + ' in the Reign of Iron roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
 		$('#loading').fadeOut();
 	}
+
+});
+
+/* DOM Manipulation and Event Listeners */
+$(function() {
+
+	$('.signupSheet-raid-select').change(function(e) {
+
+		var
+		parentSheet = $(this).closest('.signupSheet'),
+		leviathanSheet = parentSheet.find('.leviathan-signup'),
+		eowSheet = parentSheet.find('.eow-signup'),
+		selection = $(this).val();
+
+		if (selection === 'Eater of Worlds') {
+			leviathanSheet.removeClass('is-visible').hide();
+			eowSheet.addClass('is-visible').show();
+		} else if (selection === 'Leviathan') {
+			eowSheet.removeClass('is-visible').hide();
+			leviathanSheet.addClass('is-visible').show();
+		}
+
+	}).click(function() {
+
+		$(this).parent().toggleClass('is-open');
+
+	});
 
 });

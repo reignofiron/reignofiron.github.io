@@ -33,3 +33,10 @@ form.signupForm .signupForm-checkboxes legend { color: #fff; }
 form.signupForm label { color: #fff; margin-right: 1rem; }
 form.signupForm button { border: 0; -webkit-appearance: none; }
 form.signupForm span { color: #fff; }
+
+.signupSheet-options { text-align: right; }
+
+.dropdown-wrap { border-bottom: 2px solid #ccc; display: inline-block; margin-left: 1em; position: relative; }
+.dropdown-wrap svg { display: block; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: 400ms cubic-bezier(0.5, 0.9, 0.75, 1.25); }
+.dropdown-wrap select { background: transparent; border: 0; font-size: 1rem; padding: .26em 1em .26em 0; -webkit-appearance: none; }
+.dropdown-wrap.is-open svg { transform: translateY(-50%) rotate(180deg); }

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.5 8.66"{% if include.height %} height="{{include.height}}"{%endif%}{%if include.width%} width="{{include.width}}"{%endif%}>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1"><polygon class="icon{% if include.color %} icon--{{include.color}}"{% endif %} points="7.25 8.66 0 1.41 1.41 0 7.25 5.83 13.08 0 14.5 1.41 7.25 8.66"/></g>
+	</g>
+</svg>

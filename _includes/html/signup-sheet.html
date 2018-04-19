@@ -1,6 +1,18 @@
-<div class="signupSheet" id="{{include.day}}" data-sheet="{{include.sheet}}">
-  <h2 class="signupSheet-title">{{include.day}}</h2>
-  <div class="signupSheet-wrap">
+<div class="signupSheet" id="{{include.day}}" data-leviathan="{{include.leviathan-sheet}}"  data-eow="{{include.eow-sheet}}">
+  <div class="j-row vertical-center-row" style="margin-bottom: 2.618rem;">
+  	<h2 class="signupSheet-title j-col j-col-6" style="margin:0;">{{include.day}}</h2>
+		<div class="j-col j-col-6 signupSheet-options">
+			<label for="raid">Select Raid</label>
+			<div class="dropdown-wrap">
+				<select name="raid" class="signupSheet-raid-select">
+					<option value="Leviathan">Leviathan</option>
+					<option value="Eater of Worlds">Eater of Worlds</option>
+				</select>
+				{% include svg/arrow.svg width="12" color="black" %}
+			</div>
+		</div>
+  </div>
+  <div class="signupSheet-wrap leviathan-signup is-visible">
     <div class="j-row signupSheet-header">
       <div class="j-col j-col-6">
         <h4>Player Name</h4>
@@ -13,7 +25,56 @@
       <h3 class="black">No one signed up yet!</h3>
     </div>
     <div class="signupSheet-content"></div>
-		<form class="signupForm" data-postto="{{include.postto}}">
+		<form class="signupForm signupForm--leviathan" data-postto="{{include.leviathan-post}}">
+	    <div class="j-row vertical-center-row">
+	      <div class="j-col j-col-4">
+	        <label for="player_name" title="Your Battletag">Name</label>
+	        <input type="text" name="player_name" placeholder="xROI_fanGurl69x" required>
+	      </div>
+				<fieldset class="signupForm-checkboxes j-col j-col-6" style="border: 0; padding: 0;">
+					<div class="j-col j-col-3">
+						<legend>Raid Times</legend>
+					</div>
+					<div class="j-col j-col-3">
+						<label for="8am">
+							<input type="checkbox" class="signupForm-checkbox" name="8am" id="8am-raid" value="8:00 PM">
+							8:00 AM
+						</label>
+					</div>
+					<div class="j-col j-col-3">
+						<label for="1pm">
+							<input type="checkbox" class="signupForm-checkbox" name="1pm" id="1pm-raid" value="1:00 PM">
+							1:00 PM
+						</label>
+					</div>
+					<div class="j-col j-col-3">
+						<label for="6pm">
+							<input type="checkbox" class="signupForm-checkbox" name="6pm" id="6pm-raid" value="6:00 PM">
+							6:00 PM
+						</label>
+					</div>
+				</fieldset>
+	      <div class="j-col j-col-2 push-1">
+	        <button type="submit" class="button full-width">Sign Up</button>
+	      </div>
+	    </div>
+	    <input type="hidden" name="time_frame">
+	  </form>
+  </div>
+	<div class="signupSheet-wrap eow-signup" style="display: none;">
+    <div class="j-row signupSheet-header">
+      <div class="j-col j-col-6">
+        <h4>Player Name</h4>
+      </div>
+      <div class="j-col j-col-6">
+        <h4>Available</h4>
+      </div>
+    </div>
+    <div class="signupSheet-empty">
+      <h3 class="black">No one signed up yet!</h3>
+    </div>
+    <div class="signupSheet-content"></div>
+		<form class="signupForm signupForm--leviathan" data-postto="{{include.eow-post}}">
 	    <div class="j-row vertical-center-row">
 	      <div class="j-col j-col-4">
 	        <label for="player_name" title="Your Battletag">Name</label>
