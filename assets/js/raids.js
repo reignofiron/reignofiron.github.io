@@ -7,7 +7,7 @@ var
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',
 	today = new Date().getDay(),
 	sortedDays = days.slice(today).concat(days.slice(0, today)),
-	userNames = [],
+	userNames = ['Kwuiver'],
 	checkName = function(name) {
 
 		var m = false; // flag
