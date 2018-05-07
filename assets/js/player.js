@@ -4,10 +4,32 @@ $(function() {
 
   var
     {% include js/api.js %},
+    {% include js/brigade.js %},
     bungieId = checkParams('bungieId'),
     destinyId = checkParams('destinyId'),
     joined = checkParams('joined'),
-    rank = checkParams('rank');
+    rank = checkParams('rank'),
+    checkName = function(name, list) {
+
+      var m = false; // flag
+      console.log('Checking for ' + name + '...');
+
+      // loop through clan usernames and check for a match
+      $.each(list, function(i) {
+        // make case insensitve
+        if (name.toLowerCase() === list[i].toLowerCase()) {
+          console.log('Confirmed: ' + list[i]);
+          m = true;
+        }
+      });
+
+      if (m) {
+        return true;
+      } else {
+        return false;
+      }
+
+    };
 
   if (bungieId && destinyId && joined && rank) {
     $.ajax({
@@ -81,17 +103,25 @@ $(function() {
         $('#player-join-date').text(joined.replace(/-/g, '/'));
         switch(rank) {
 
-          case '3': $('#player-rank').text('Iron Officer')
+          case '3': $('#player-rank').text('Brigadier General').css('color', '#dac057');
           break;
 
-          case '5': $('#player-rank').text('Iron General');
+          case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');;
           break;
 
-          default: $('#player-rank').text('Iron Brigaider');
+          case '2': if (checkName(name, brigade)) {
+            $('#player-rank').text('Iron Brigadier');
+          } else {
+            $('#player-rank').text('Iron Sentry');
+          }
+          break;
+
+          default: return
         }
       },
       error: function(data) {
         console.log('Error loading player profile:', data);
+        alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Stats will be back up when Bungie\'s servers are. Please check back again soon!');
       }
     });
   }

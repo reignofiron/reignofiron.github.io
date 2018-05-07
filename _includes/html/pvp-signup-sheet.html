@@ -1,0 +1,182 @@
+<div class="pvpSignup" id="{{include.day}}" data-open="{{include.open-sheet}}"  data-brigade="{{include.brigade-sheet}}">
+  <!-- signup info -->
+  <div class="j-row vertical-center-row pvpSignup-info">
+    <h2 class="j-col j-col-6">{{include.day}}</h2>
+    <div class="j-col j-col-6 pvpSignup-info-options">
+      <label for="">Level</label>
+      <div class="dropdown-wrap">
+        <select name="level">
+          <option value="Open">Open</option>
+          <option value="Brigade">Brigade</option>
+        </select>
+        {% include svg/arrow.svg width="12" color="black" %}
+      </div>
+    </div>
+  </div>
+  <div class="pvpSignup-container">
+    <div class="j-row pvpSignup-header">
+      <div class="j-col j-col-6">
+        <h4>Player Name</h4>
+      </div>
+      <div class="j-col j-col-6">
+        <h4>Available</h4>
+      </div>
+    </div>
+    <!-- OPEN SIGNUPS -->
+    <div class="pvpSignup-level pvpSignup-level--open is-visible">
+      <div class="pvpSignup-form" style="display: none;">
+        <form class="pvpSignupForm pvpSignupForm--open" data-postto="{{include.open-post}}">
+          <div class="pvpSignupForm-close"></div>
+          <div class="j-row">
+            <div class="j-col j-col-12">
+              <h3 class="black">Open Signups for {{include.day}}</h3>
+            </div>
+          </div>
+          <div class="j-row" style="margin-bottom: 1.618rem;">
+            <div class="j-col j-col-3">
+              <label for="name">Username</label>
+            </div>
+            <div class="j-col j-col-8 push-1">
+              <input type="text" name="name" placeholder="Your D2 Battletag (no numbers)">
+            </div>
+          </div>
+          <div class="j-row" style="margin-bottom: 1.618rem;">
+            <div class="j-col j-col-3">
+              <label for="availability">Availability</label>
+            </div>
+            <div class="j-col j-col-8 push-1">
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="10am" value="10:00 AM">
+                <label for="10am">10:00 AM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="12pm" value="12:00 PM">
+                <label for="12pm">12:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="2pm" value="2:00 PM">
+                <label for="2pm">2:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="4pm" value="4:00 PM">
+                <label for="4pm">4:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="6pm" value="6:00 PM">
+                <label for="6pm">6:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="8pm" value="8:00 PM">
+                <label for="8pm">8:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="10pm" value="10:00 PM">
+                <label for="10pm">10:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="allday" value="All Day">
+                <label for="allday">All Day</label>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="availability">
+          <div class="j-row vertical-center-row pvpSignupForm-cta">
+            <div class="j-col j-col-8">
+              <span>All signup times are in Pacific Time</span>
+            </div>
+            <div class="j-col j-col-3 push-1">
+              <button href="" class="button full-width">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="pvpSignup-empty">
+        <h3 class="black centered">No one signed up yet!</h3>
+      </div>
+      <!-- OPEN SIGNUPS LIST -->
+      <div class="pvpSignup-content"></div>
+      <div class="j-row vertical-center-row space-between pvpSignup-button">
+        <h4 class="gold">Sign up for Reign of Iron PvP</h4>
+        <a href="javascript:void(0)" class="button js-signup-button">Sign Up</a>
+      </div>
+    </div>
+    <!-- BRIGADE SIGNUPS -->
+    <div class="pvpSignup-level pvpSignup-level--brigade" style="display: none;">
+      <div class="pvpSignup-form" style="display: none;">
+        <form class="pvpSignupForm pvpSignupForm--brigade" data-postto="{{include.brigade-post}}">
+          <div class="pvpSignupForm-close"></div>
+          <div class="j-row">
+            <div class="j-col j-col-12">
+              <h3 class="black">Brigade Signups for {{include.day}}</h3>
+            </div>
+          </div>
+          <div class="j-row" style="margin-bottom: 1.618rem;">
+            <div class="j-col j-col-3">
+              <label for="name">Username</label>
+            </div>
+            <div class="j-col j-col-8 push-1">
+              <input type="text" name="name" placeholder="Your D2 Battletag (no numbers)">
+            </div>
+          </div>
+          <div class="j-row" style="margin-bottom: 1.618rem;">
+            <div class="j-col j-col-3">
+              <label for="availability">Availability</label>
+            </div>
+            <div class="j-col j-col-8 push-1">
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="10am" value="10:00 AM">
+                <label for="10am">10:00 AM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="12pm" value="12:00 PM">
+                <label for="12pm">12:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="2pm" value="2:00 PM">
+                <label for="2pm">2:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="4pm" value="4:00 PM">
+                <label for="4pm">4:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="6pm" value="6:00 PM">
+                <label for="6pm">6:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="8pm" value="8:00 PM">
+                <label for="8pm">8:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="10pm" value="10:00 PM">
+                <label for="10pm">10:00 PM</label>
+              </div>
+              <div class="pvpSignupForm-time">
+                <input type="checkbox" name="allday" value="All Day">
+                <label for="allday">All Day</label>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="availability">
+          <div class="j-row vertical-center-row pvpSignupForm-cta">
+            <div class="j-col j-col-8">
+              <span>All signup times are in Pacific Time</span>
+            </div>
+            <div class="j-col j-col-3 push-1">
+              <button href="" class="button full-width">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="pvpSignup-empty">
+        <h3 class="black centered">No one signed up yet!</h3>
+      </div>
+      <!-- BRIGADE SIGNUPS LIST -->
+      <div class="pvpSignup-content"></div>
+      <div class="j-row vertical-center-row space-between pvpSignup-button">
+        <h4 class="gold">Sign up for Iron Brigade PvP</h4>
+        <a href="javascript:void(0)" class="button js-signup-button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>

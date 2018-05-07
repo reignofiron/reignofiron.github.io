@@ -10,10 +10,13 @@ $.ajax({
   headers: {
     "X-API-Key": apiKey
   }
-}).done(function(json) {
+}).success(function(json) {
   var members = json.Response.results;
   console.log('Member list:', members);
   listMembers(members);
+}).error(function(json) {
+  alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+  console.log(json);
 });
 
 function listMembers(rsp) {

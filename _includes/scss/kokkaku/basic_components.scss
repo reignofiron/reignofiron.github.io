@@ -29,12 +29,14 @@ div#site {
   background-repeat: no-repeat;
   @include vertical-center;
   height: 33vw;
-  min-height: 360px;
+  min-height: 240px;
+	max-height: 400px;
   &.slim {
     height: 20vw;
     min-height: 240px;
     h1 {
       font-size: $type-larger;
+			margin-top: 0;
     }
   }
   h1 {
@@ -272,6 +274,7 @@ section.color-block {
 .collapsible-title {
   position: relative;
   padding-bottom: .42em;
+	padding-right: 1.618rem;
   border-bottom: 2px solid $gray;
   cursor: pointer;
 	transition: 500ms $transition-ease-in;
@@ -281,7 +284,7 @@ section.color-block {
     display: block;
     height: 2px;
     width: 0.6em;
-    background: $blue;
+    background: $gold;
     position: absolute;
     top: 50%;
     right: $spacing-smallest;
@@ -292,7 +295,7 @@ section.color-block {
     transform: translateY(-50%) rotate(90deg);
   }
   &.is-expanded {
-		border-bottom: 2px solid $blue;
+		border-bottom: 2px solid gold;
     &:before {
       transform: translateY(-50%) rotate(-180deg);
     }
@@ -357,6 +360,33 @@ form.form {
 	}
 	@media #{$mobile}, #{$tablet} {
 		padding: $spacing-normal 0;
+	}
+}
+
+.dropdown-wrap {
+	border-bottom: 2px solid #ccc;
+	display: inline-block;
+	margin-left: 1em;
+	position: relative;
+	svg {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: 400ms cubic-bezier(.5,.9,.75,1.25);
+	}
+	select {
+		background: transparent;
+		border: 0;
+		font-size: 1rem;
+		padding: .26em 1em .26em 0;
+		-webkit-appearance: none;
+	}
+	&.is-open {
+		svg {
+			transform: translateY(-50%) rotate(180deg);
+		}
 	}
 }
 

@@ -1,0 +1,197 @@
+---
+---
+#loading {
+  background: rgba(white, .9);
+  left: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9700;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+section.hero#crucible-hero {
+  background-image: url('/assets/img/reign-of-iron-crucible.jpg');
+  position: relative;
+  .hero-content {
+    z-index: 200;
+  }
+  h1 {
+    margin-top: 0;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.65);
+    z-index: 100;
+  }
+}
+.pvpSignup {
+  margin-bottom: 4.23rem;
+}
+.pvpSignup-info {
+  margin-bottom: 1.618rem;
+  h2 {
+    margin: 0;
+  }
+  @media screen and (max-width: 767px) {
+    h2 {
+      text-align: center;
+      margin-bottom: 1.618rem;
+    }
+  }
+}
+.pvpSignup-info-options {
+  text-align: right;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+.pvpSignup-container {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(black, .1);
+}
+.pvpSignup-content {
+  background: #fff;
+}
+.pvpSignup-header {
+  background: #e3d081;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.pvpSignup-empty {
+  padding: 2.168rem;
+}
+.pvpSignup-entry {
+  border-bottom: 2px solid #eee;
+  padding: 1rem 0;
+  &:last-child {
+    border-bottom: 0;
+  }
+  > div {
+    @media screen and (max-width: 767px) {
+      padding-left: 40%;
+      position: relative;
+      &::before {
+        color: #999;
+        content: attr(data-th);
+        font-size: .618rem;
+        font-weight: 300;
+        left: 0;
+        padding: 0 1rem;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}
+.pvpSignup-button {
+  background: #191919;
+  padding: 1rem;
+  h4 {
+    margin: 0;
+  }
+  @media screen and (max-width: 767px) {
+    h4 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+}
+.pvpSignup-form {
+  background: rgba(#191919, .9);
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+}
+.pvpSignupForm {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 4px 0 rgba(black, .42);
+  left: 50%;
+  max-width: 800px;
+  padding: 1.618rem 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  h3 {
+    margin-top: 0;
+  }
+  input[type="text"] {
+    border: 0;
+    border-bottom: 2px solid #333;
+    display: block;
+    transition: 300ms ease;
+    width: 100%;
+    &:focus {
+      border-color: #e3d081;
+    }
+  }
+  button {
+    border: 0;
+    -webkit-appearance: none;
+  }
+  @media screen and (max-width: 767px) {
+    left: auto;
+    margin: 1rem auto 0;
+    position: relative;
+    top: auto;
+    transform: none;
+    width: 95%;
+    width: calc(100% - 2rem);
+  }
+}
+.pvpSignupForm-close {
+  cursor: pointer;
+  height: 16px;
+  position: absolute;
+  right: 1em;
+  top: 1.618em;
+  width: 16px;
+  &::before,
+  &::after {
+    background: #e3d081;
+    content: '';
+    display: block;
+    height: 16px;
+    position: absolute;
+    transition: 300ms ease;
+    width: 2px;
+  }
+  &::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      background: #dac057;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    right: 0;
+    top: 1em;
+  }
+}
+.pvpSignupForm-cta {
+  border-top: 2px solid #eee;
+  padding-top: 1.618rem;
+}

@@ -3,21 +3,20 @@
 var
 	{% include js/api.js %},
 	days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-	weekMap = {},
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',
 	today = new Date().getDay(),
 	sortedDays = days.slice(today).concat(days.slice(0, today)),
-	userNames = ['Kwuiver'],
+	roster = ['Kwuiver'],
 	checkName = function(name) {
 
 		var m = false; // flag
 		console.log('Checking to see if ' + name + ' is a Reign of Iron Member...');
 
-		// loop through clan usernames and check for a match
-		$.each(userNames, function(i) {
+		// loop through clan roster and check for a match
+		$.each(roster, function(i) {
 			// make case insensitve
-			if (name.toLowerCase() === userNames[i].toLowerCase()) {
-				console.log('Confirmed, ' + userNames[i] + ' is in Reign of Iron');
+			if (name.toLowerCase() === roster[i].toLowerCase()) {
+				console.log('Confirmed, ' + roster[i] + ' is in Reign of Iron');
 				m = true;
 			}
 		});
@@ -52,11 +51,14 @@ $.ajax({
 	headers: {
 		"X-API-Key": apiKey
 	}
-}).done(function(json) {
-	var members = json.Response.results;
-	$.each(members, function(i) {
-		userNames.push(members[i].destinyUserInfo.displayName);
-	});
+}).success(function(json) {
+  var members = json.Response.results;
+  $.each(members, function(i) {
+    roster.push(members[i].destinyUserInfo.displayName);
+  });
+}).error(function(json) {
+  alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Signups will resume when Bungie\'s servers do. Please check back again soon!');
+  console.log(json.Response.results);
 });
 
 // reorder signup sheets so today's shows up first
@@ -128,7 +130,8 @@ $('form.signupForm').submit(function(e) {
 	e.preventDefault();
 	// Show loading screen
 	$('#loading').fadeIn();
-
+	// enable scrolling again
+	$('html,body').css('overflow', '');
 	var
 		available = [],
 		name = $(this).find('input[name="player_name"]').val(),
@@ -211,10 +214,6 @@ $(function() {
 			eowSheet.removeClass('is-visible').hide();
 			leviathanSheet.addClass('is-visible').show();
 		}
-
-	}).click(function() {
-
-		$(this).parent().toggleClass('is-open');
 
 	});
 

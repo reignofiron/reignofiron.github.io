@@ -226,9 +226,9 @@ div#site.is-blurred { -webkit-filter: blur(6px); filter: blur(6px); }
 
 .centered { text-align: center; }
 
-.hero { width: 100%; background-position: center; background-size: cover; background-repeat: no-repeat; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row; flex-flow: row; height: 33vw; min-height: 360px; }
+.hero { width: 100%; background-position: center; background-size: cover; background-repeat: no-repeat; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row; flex-flow: row; height: 33vw; min-height: 240px; max-height: 400px; }
 .hero.slim { height: 20vw; min-height: 240px; }
-.hero.slim h1 { font-size: 2.618rem; }
+.hero.slim h1 { font-size: 2.618rem; margin-top: 0; }
 .hero h1 { font-size: 4.263rem; color: #0860b8; margin-bottom: 1.618rem; }
 .hero h3 { font-size: 1.25rem; color: #fff; font-weight: 300; }
 .hero.full-screen { height: 100vh; }
@@ -286,10 +286,10 @@ section.color-block h2 { font-size: 2.618rem; }
 @media screen and (max-width: 767px), screen and (min-width: 768px) and (max-width: 959px) { .back-to-top--bar { display: block; position: fixed; bottom: -68px; left: 0; height: 68px; width: 100%; z-index: 400; -webkit-box-shadow: 0 0.68em 1em -0.42em rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0.68em 1em -0.42em rgba(0, 0, 0, 0.1); box-shadow: 0 0.68em 1em -0.42em rgba(0, 0, 0, 0.1); background: rgba(255, 255, 255, 0.68); transition: 400ms cubic-bezier(0.32, 0.57, 0.25, 1); }
   .back-to-top--bar.is-visible { bottom: 0; } }
 
-.collapsible-title { position: relative; padding-bottom: .42em; border-bottom: 2px solid #ccc; cursor: pointer; transition: 500ms cubic-bezier(0.13, 0.78, 0.3, 0.99); }
-.collapsible-title::before, .collapsible-title::after { content: ''; display: block; height: 2px; width: 0.6em; background: #0860b8; position: absolute; top: 50%; right: 0.618rem; transform: translateY(-50%); transition: 500ms cubic-bezier(0.13, 0.78, 0.3, 0.99); }
+.collapsible-title { position: relative; padding-bottom: .42em; padding-right: 1.618rem; border-bottom: 2px solid #ccc; cursor: pointer; transition: 500ms cubic-bezier(0.13, 0.78, 0.3, 0.99); }
+.collapsible-title::before, .collapsible-title::after { content: ''; display: block; height: 2px; width: 0.6em; background: #e3d081; position: absolute; top: 50%; right: 0.618rem; transform: translateY(-50%); transition: 500ms cubic-bezier(0.13, 0.78, 0.3, 0.99); }
 .collapsible-title::after { transform: translateY(-50%) rotate(90deg); }
-.collapsible-title.is-expanded { border-bottom: 2px solid #0860b8; }
+.collapsible-title.is-expanded { border-bottom: 2px solid gold; }
 .collapsible-title.is-expanded:before { transform: translateY(-50%) rotate(-180deg); }
 .collapsible-title.is-expanded:after { transform: translateY(-50%) rotate(-180deg); }
 
@@ -304,6 +304,11 @@ form.form select { padding: 0.26em; }
 form.form button { border: 0; -webkit-appearance: none; }
 form.form textarea { border: 2px solid #ccc; border-radius: 0; font-size: 1rem; height: 178px; padding: 1rem; resize: vertical; -webkit-appearance: none; width: 100%; }
 @media screen and (max-width: 767px), screen and (min-width: 768px) and (max-width: 959px) { form.form { padding: 1.618rem 0; } }
+
+.dropdown-wrap { border-bottom: 2px solid #ccc; display: inline-block; margin-left: 1em; position: relative; }
+.dropdown-wrap svg { display: block; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: 400ms cubic-bezier(0.5, 0.9, 0.75, 1.25); }
+.dropdown-wrap select { background: transparent; border: 0; font-size: 1rem; padding: .26em 1em .26em 0; -webkit-appearance: none; }
+.dropdown-wrap.is-open svg { transform: translateY(-50%) rotate(180deg); }
 
 @media screen and (max-width: 767px) { .g-recaptcha { transform: scale(0.9); } }
 @media screen and (max-width: 360px) { .g-recaptcha { transform: scale(0.72); } }

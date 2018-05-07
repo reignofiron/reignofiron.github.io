@@ -1,0 +1,18 @@
+brigade = [
+  'Canismajoris',
+  'Kuro',
+  'Indomitare',
+  'counterion',
+  'Luna',
+  'Renzo',
+  'Rumps',
+  'CyberDemon',
+  'Visc',
+  'ZeroC00L',
+  'SpaceCorgo',
+  'Iyeane',
+  'Riperino',
+  'razoredge',
+  'JPo203',
+  'tadd',
+]

@@ -126,30 +126,7 @@ form.signupForm {
 }
 .signupSheet-options {
 	text-align: right;
-}
-.dropdown-wrap {
-	border-bottom: 2px solid #ccc;
-	display: inline-block;
-	margin-left: 1em;
-	position: relative;
-	svg {
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		transition: 400ms cubic-bezier(.5,.9,.75,1.25);
-	}
-	select {
-		background: transparent;
-		border: 0;
-		font-size: 1rem;
-		padding: .26em 1em .26em 0;
-		-webkit-appearance: none;
-	}
-	&.is-open {
-		svg {
-			transform: translateY(-50%) rotate(180deg);
-		}
-	}
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
