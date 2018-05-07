@@ -26,6 +26,7 @@ section.hero#raids-hero::before { content: ''; display: block; position: absolut
 
 form.signupForm { background: #222; padding: 1rem 0; }
 form.signupForm input[type="text"], form.signupForm select { background: transparent; border: 0; border-bottom: 2px solid #e3d081; border-radius: 0; color: #fff; font-size: .8rem; padding: 0 0 .16em; -webkit-appearance: none; }
+form.signupForm input[type="text"]:-webkit-autofill, form.signupForm input[type="text"]:-webkit-autofill:hover, form.signupForm input[type="text"]:-webkit-autofill:focus, form.signupForm select:-webkit-autofill, form.signupForm select:-webkit-autofill:hover, form.signupForm select:-webkit-autofill:focus { box-shadow: inset 0 2.618rem 0 0 #fff; }
 form.signupForm select { padding: 0 .26em .16em; }
 form.signupForm select option { color: #222; }
 form.signupForm .signupForm-checkboxes { border: 0; padding: 0; }

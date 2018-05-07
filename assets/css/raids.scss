@@ -98,6 +98,11 @@ form.signupForm {
     font-size: .8rem;
     padding: 0 0 .16em;
     -webkit-appearance: none;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      box-shadow: inset 0 2.618rem 0 0 #fff;
+    }
   }
   select {
     padding: 0 .26em .16em;

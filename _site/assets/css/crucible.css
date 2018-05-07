@@ -37,8 +37,9 @@ section.hero#crucible-hero::before { content: ''; display: block; position: abso
 
 .pvpSignupForm { background: #fff; border-radius: 3px; box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.42); left: 50%; max-width: 800px; padding: 1.618rem 1rem; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 100%; }
 .pvpSignupForm h3 { margin-top: 0; }
-.pvpSignupForm input[type="text"] { border: 0; border-bottom: 2px solid #333; display: block; transition: 300ms ease; width: 100%; }
+.pvpSignupForm input[type="text"] { border: 0; border-bottom: 2px solid #333; display: block; font-size: 1rem; transition: 300ms ease; width: 100%; }
 .pvpSignupForm input[type="text"]:focus { border-color: #e3d081; }
+.pvpSignupForm input[type="text"]:-webkit-autofill, .pvpSignupForm input[type="text"]:-webkit-autofill:hover, .pvpSignupForm input[type="text"]:-webkit-autofill:focus { box-shadow: inset 0 2.618rem 0 0 white; }
 .pvpSignupForm button { border: 0; -webkit-appearance: none; }
 @media screen and (max-width: 767px) { .pvpSignupForm { left: auto; margin: 1rem auto 0; position: relative; top: auto; transform: none; width: 95%; width: calc(100% - 2rem); } }
 
