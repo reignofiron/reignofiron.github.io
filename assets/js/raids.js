@@ -168,7 +168,7 @@ $('form.signupForm').submit(function(e) {
 					', ' + name + '!'
 				);
 				// add new data to table immediately
-				if ($form.hasClass('.signupForm--leviathan')) {
+				if ($form.hasClass('signupForm--leviathan')) {
 					$form.closest('.signupSheet')
 					.find('.leviathan-signup')
 					.find('.signupSheet-empty')
@@ -180,7 +180,7 @@ $('form.signupForm').submit(function(e) {
 						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
 						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
 					);
-				} else {
+				} else if ($form.hasClass('signupForm--eow')) {
 					$form.closest('.signupSheet')
 					.find('.eow-signup')
 					.find('.signupSheet-empty')
