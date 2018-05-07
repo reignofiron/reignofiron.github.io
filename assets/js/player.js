@@ -103,18 +103,20 @@ $(function() {
         $('#player-join-date').text(joined.replace(/-/g, '/'));
         switch(rank) {
 
-          case '3': $('#player-rank').text('Brigadier General').css('color', '#dac057');
+          case '3': $('#player-rank').text('Brigadier General').css('color', '#a95fb5');
           break;
 
-          case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');;
+          case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');
           break;
 
           case '2': if (checkName(name, brigade)) {
-            $('#player-rank').text('Iron Brigadier');
+            $('#player-rank').text('Iron Brigadier').css('color', '#6cbdd1');
           } else {
-            $('#player-rank').text('Iron Sentry');
+            $('#player-rank').text('Iron Sentry').css('color', '#72c173');
           }
           break;
+
+          case '1': $('#player-rank').text('Iron Initiate').css('color', '#ccc');
 
           default: return
         }
