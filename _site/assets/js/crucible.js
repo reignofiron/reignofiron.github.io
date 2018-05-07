@@ -187,19 +187,33 @@ $('form.pvpSignupForm').submit(function(e) {
   					', ' + name + '!'
   				);
           $('.pvpSignup-form').removeClass('is-visible').fadeOut();
-  				// add to signup sheet immediately
-  				$form.closest('.pvpSignup')
-  					// first get rid of "no one signed up" message if user is first to register
-  					.find('.pvpSignup-empty')
+  				// add new data to table immediately
+          if ($form.hasClass('.pvpSignupForm--open')) {
+            $form.closest('.pvpSignup')
+            .find('.pvpSignup-level--open')
+            .find('.pvpSignup-empty')
   					.hide()
-  					.end()
-  					// create new row in table and append entered data
+            .end()
   					.find('.pvpSignup-content')
   					.append(
   						'<div class="j-row pvpSignup-entry">' +
   						'<div class="j-col j-col-6" data-th="Player"><span class="pvpSignup-player">' + name + '</span></div>' +
   						'<div class="j-col j-col-6" data-th="Available"><span class="pvpSignup-availability">' + available + '</span></div>'
   					);
+          } else {
+            $form.closest('.pvpSignup')
+            .find('.pvpSignup-level--brigade')
+            .find('.pvpSignup-empty')
+  					.hide()
+            .end()
+  					.find('.pvpSignup-content')
+  					.append(
+  						'<div class="j-row pvpSignup-entry">' +
+  						'<div class="j-col j-col-6" data-th="Player"><span class="pvpSignup-player">' + name + '</span></div>' +
+  						'<div class="j-col j-col-6" data-th="Available"><span class="pvpSignup-availability">' + available + '</span></div>'
+  					);
+          }
+
   			},
   			error: function(response) {
   				console.log(response);

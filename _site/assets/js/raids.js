@@ -168,19 +168,32 @@ $('form.signupForm').submit(function(e) {
 					+ $form.closest('.signupSheet').attr('id') +
 					', ' + name + '!'
 				);
-				// add to signup sheet immediately
-				$form.closest('.signupSheet')
-					// first get rid of "no one signed up" message if user is first to register
+				// add new data to table immediately
+				if ($form.hasClass('.signupForm--leviathan')) {
+					$form.closest('.signupSheet')
+					.find('.leviathan-signup')
 					.find('.signupSheet-empty')
 					.hide()
 					.end()
-					// create new row in table and append entered data
 					.find('.signupSheet-content')
 					.append(
 						'<div class="j-row signupSheet-entry">' +
 						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
-						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + timeFrame.val() + '</span></div>'
+						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
 					);
+				} else {
+					$form.closest('.signupSheet')
+					.find('.eow-signup')
+					.find('.signupSheet-empty')
+					.hide()
+					.end()
+					.find('.signupSheet-content')
+					.append(
+						'<div class="j-row signupSheet-entry">' +
+						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
+						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
+					);
+				}
 			},
 			error: function(response) {
 				console.log(response);
