@@ -6,7 +6,7 @@ var
 	sheetURL = 'https://script.google.com/macros/s/AKfycbzd7JwMek_PEK_X2anmO7fRPaWbY06uf3OLD-x6BJWlB-cYKls/exec',
 	today = new Date().getDay(),
 	sortedDays = days.slice(today).concat(days.slice(0, today)),
-	roster = ['Kwuiver'],
+	roster = [],
 	checkName = function(name) {
 
 		var m = false; // flag
@@ -52,12 +52,17 @@ $.ajax({
 		"X-API-Key": apiKey
 	}
 }).success(function(json) {
-  var members = json.Response.results;
-  $.each(members, function(i) {
-    roster.push(members[i].destinyUserInfo.displayName);
-  });
+	if (json.ErrorStatus === 'Success') {
+		var members = json.Response.results;
+		$.each(members, function(i) {
+	    roster.push(members[i].destinyUserInfo.displayName);
+	  });
+	} else {
+		alert('Uh oh, failed to load RoI roster. Looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+	  console.log(json);
+	}
 }).error(function(json) {
-  alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Signups will resume when Bungie\'s servers do. Please check back again soon!');
+  alert('Uh oh, failed to load RoI roster. Looks like Bungie\'s doing server maintenance or having problems. Signups will resume when Bungie\'s servers do. Please check back again soon!');
   console.log(json.Response.results);
 });
 

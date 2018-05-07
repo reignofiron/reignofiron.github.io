@@ -57,41 +57,48 @@ groupID = "2974952"
         "X-API-Key": apiKey
       },
       success: function(data) {
-        var
-        stats = data.Response.allPvP.allTime,
-        efficiency = stats.efficiency.basic.displayValue,
-        kd = stats.killsDeathsRatio.basic.displayValue,
-        kda = stats.killsDeathsAssists.basic.displayValue,
-        kills = stats.kills.basic.displayValue,
-        deaths = stats.deaths.basic.displayValue,
-        assists = stats.assists.basic.displayValue,
-        precisionKills = stats.precisionKills.basic.displayValue,
-        combatRating = stats.combatRating.basic.displayValue,
-        mostKills = stats.bestSingleGameKills.basic.displayValue,
-        killSpree = stats.longestKillSpree.basic.displayValue,
-        mostPrecision = stats.mostPrecisionKills.basic.displayValue,
-        weapon = stats.weaponBestType.basic.displayValue,
-        clock = stats.allParticipantsTimePlayed.basic.displayValue,
-        hours = clock.match(/\d+/g);
+				if (data.ErrorStatus === 'Success') {
+					var
+	        stats = data.Response.allPvP.allTime,
+	        efficiency = stats.efficiency.basic.displayValue,
+	        kd = stats.killsDeathsRatio.basic.displayValue,
+	        kda = stats.killsDeathsAssists.basic.displayValue,
+	        kills = stats.kills.basic.displayValue,
+	        deaths = stats.deaths.basic.displayValue,
+	        assists = stats.assists.basic.displayValue,
+	        precisionKills = stats.precisionKills.basic.displayValue,
+	        combatRating = stats.combatRating.basic.displayValue,
+	        mostKills = stats.bestSingleGameKills.basic.displayValue,
+	        killSpree = stats.longestKillSpree.basic.displayValue,
+	        mostPrecision = stats.mostPrecisionKills.basic.displayValue,
+	        weapon = stats.weaponBestType.basic.displayValue,
+	        clock = stats.allParticipantsTimePlayed.basic.displayValue,
+	        hours = clock.match(/\d+/g);
 
-        totalHours = (Number(hours[0]) * 24) + Number(hours[1]);
+	        totalHours = (Number(hours[0]) * 24) + Number(hours[1]);
 
-        console.log('Player stats:', data);
+	        console.log('Player stats:', data);
 
-        // Populate stats
-        $('#player-clock').text(totalHours + 'h');
-        $('#player-efficiency').text(efficiency);
-        $('#player-kd').text(kd);
-        $('#player-kda').text(kda);
-        $('#player-kills').text(kills);
-        $('#player-assists').text(assists);
-        $('#player-precision-kills').text(precisionKills);
-        $('#player-weapon').text(weapon);
-        $('#player-kill-spree').text(killSpree);
-        $('#player-most-kills').text(mostKills);
-        $('#player-most-precision').text(mostPrecision);
+	        // Populate stats
+	        $('#player-clock').text(totalHours + 'h');
+	        $('#player-efficiency').text(efficiency);
+	        $('#player-kd').text(kd);
+	        $('#player-kda').text(kda);
+	        $('#player-kills').text(kills);
+	        $('#player-assists').text(assists);
+	        $('#player-precision-kills').text(precisionKills);
+	        $('#player-weapon').text(weapon);
+	        $('#player-kill-spree').text(killSpree);
+	        $('#player-most-kills').text(mostKills);
+	        $('#player-most-precision').text(mostPrecision);
+				} else {
+					alert('Uh oh, failed to load player stats! Looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+				  console.log(data);
+				}
+
       },
       error: function(data) {
+				alert('Uh oh, failed to load player stats! Looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
         console.log('Error loading player stats:', data);
       }
     });
@@ -102,43 +109,48 @@ groupID = "2974952"
         "X-API-Key": apiKey
       },
       success: function(data) {
-        console.log('Player profile:', data);
-        var
-        response = data.Response,
-        about = response.about,
-        banner = response.profileThemeName,
-        blizzard = response.blizzardDisplayName,
-        icon = response.profilePicturePath,
-        name = blizzard.substring(0, blizzard.indexOf('#'));
+				if (data.ErrorStatus === 'Success') {
+					console.log('Player profile:', data);
+					var
+					response = data.Response,
+					about = response.about,
+					banner = response.profileThemeName,
+					blizzard = response.blizzardDisplayName,
+					icon = response.profilePicturePath,
+					name = blizzard.substring(0, blizzard.indexOf('#'));
 
-        // Populate profile
-        $('.hero#player-hero').css({
-          'background-image': 'url("https://bungie.net/img/UserThemes/' + banner + '/header.jpg")'
-        })
-        $('#player-title').text(name);
-        $('.player-icon').attr({
-          'src': 'https://www.bungie.net' + icon
-        });
-        $('#player-join-date').text(joined.replace(/-/g, '/'));
-        switch(rank) {
+					// Populate profile
+					$('.hero#player-hero').css({
+						'background-image': 'url("https://bungie.net/img/UserThemes/' + banner + '/header.jpg")'
+					})
+					$('#player-title').text(name);
+					$('.player-icon').attr({
+						'src': 'https://www.bungie.net' + icon
+					});
+					$('#player-join-date').text(joined.replace(/-/g, '/'));
+					switch(rank) {
 
-          case '3': $('#player-rank').text('Brigadier General').css('color', '#a95fb5');
-          break;
+						case '3': $('#player-rank').text('Brigadier General').css('color', '#a95fb5');
+						break;
 
-          case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');
-          break;
+						case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');
+						break;
 
-          case '2': if (checkName(name, brigade)) {
-            $('#player-rank').text('Iron Brigadier').css('color', '#6cbdd1');
-          } else {
-            $('#player-rank').text('Iron Sentry').css('color', '#72c173');
-          }
-          break;
+						case '2': if (checkName(name, brigade)) {
+							$('#player-rank').text('Iron Brigadier').css('color', '#6cbdd1');
+						} else {
+							$('#player-rank').text('Iron Sentry').css('color', '#72c173');
+						}
+						break;
 
-          case '1': $('#player-rank').text('Iron Initiate').css('color', '#ccc');
+						case '1': $('#player-rank').text('Iron Initiate').css('color', '#ccc');
 
-          default: return
-        }
+						default: return
+					}
+				} else {
+					console.log('Error loading player profile:', data);
+	        alert('Uh oh, failed to load player info! Looks like Bungie\'s doing server maintenance or having problems. Stats will be back up when Bungie\'s servers are. Please check back again soon!');
+				}
       },
       error: function(data) {
         console.log('Error loading player profile:', data);
