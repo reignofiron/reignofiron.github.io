@@ -167,8 +167,8 @@ section.hero#crucible-hero {
   cursor: pointer;
   height: 16px;
   position: absolute;
-  right: 1em;
-  top: 1.618em;
+  right: 1rem;
+  top: 1rem;
   width: 16px;
   &::before,
   &::after {
@@ -176,15 +176,17 @@ section.hero#crucible-hero {
     content: '';
     display: block;
     height: 16px;
+    left: 7px;
     position: absolute;
+    top: 0;
     transition: 300ms ease;
     width: 2px;
   }
   &::before {
-    transform: translate(-50%,-50%) rotate(45deg);
+    transform: rotate(45deg);
   }
   &::after {
-    transform: translate(-50%,-50%) rotate(-45deg);
+    transform: rotate(-45deg);
   }
   &:hover {
     &::before,
@@ -193,8 +195,8 @@ section.hero#crucible-hero {
     }
   }
   @media screen and (max-width: 767px) {
-    right: 0;
-    top: 1em;
+    right: .5em;
+    top: .5em;
   }
 }
 .pvpSignupForm-cta {

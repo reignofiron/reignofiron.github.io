@@ -43,11 +43,11 @@ section.hero#crucible-hero::before { content: ''; display: block; position: abso
 .pvpSignupForm button { border: 0; -webkit-appearance: none; }
 @media screen and (max-width: 767px) { .pvpSignupForm { left: auto; margin: 1rem auto 0; position: relative; top: auto; transform: none; width: 95%; width: calc(100% - 2rem); } }
 
-.pvpSignupForm-close { cursor: pointer; height: 16px; position: absolute; right: 1em; top: 1.618em; width: 16px; }
-.pvpSignupForm-close::before, .pvpSignupForm-close::after { background: #e3d081; content: ''; display: block; height: 16px; position: absolute; transition: 300ms ease; width: 2px; }
-.pvpSignupForm-close::before { transform: translate(-50%, -50%) rotate(45deg); }
-.pvpSignupForm-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.pvpSignupForm-close { cursor: pointer; height: 16px; position: absolute; right: 1rem; top: 1rem; width: 16px; }
+.pvpSignupForm-close::before, .pvpSignupForm-close::after { background: #e3d081; content: ''; display: block; height: 16px; left: 7px; position: absolute; top: 0; transition: 300ms ease; width: 2px; }
+.pvpSignupForm-close::before { transform: rotate(45deg); }
+.pvpSignupForm-close::after { transform: rotate(-45deg); }
 .pvpSignupForm-close:hover::before, .pvpSignupForm-close:hover::after { background: #dac057; }
-@media screen and (max-width: 767px) { .pvpSignupForm-close { right: 0; top: 1em; } }
+@media screen and (max-width: 767px) { .pvpSignupForm-close { right: .5em; top: .5em; } }
 
 .pvpSignupForm-cta { border-top: 2px solid #eee; padding-top: 1.618rem; }
