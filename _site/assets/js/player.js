@@ -59,6 +59,7 @@ groupID = "2974952"
       success: function(data) {
 				if (data.ErrorStatus === 'Success') {
 					var
+          // pvp stats
 	        stats = data.Response.allPvP.allTime,
 	        efficiency = stats.efficiency.basic.displayValue,
 	        kd = stats.killsDeathsRatio.basic.displayValue,
@@ -72,6 +73,21 @@ groupID = "2974952"
 	        killSpree = stats.longestKillSpree.basic.displayValue,
 	        mostPrecision = stats.mostPrecisionKills.basic.displayValue,
 	        weapon = stats.weaponBestType.basic.displayValue,
+          // pve stats
+          // raid stats
+          raid = data.Response.raid.allTime,
+          raidClears = raid.activitiesCleared.basic.displayValue,
+          raidKd = raid.killsDeathsRatio.basic.displayValue,
+          raidKills = raid.kills.basic.displayValue,
+          raidAvgKills = raid.kills.pga.displayValue,
+          raidBestKills = raid.bestSingleGameKills.basic.displayValue,
+          // strikes stats
+          strikes = data.Response.allStrikes.allTime,
+          strikesClears = strikes.activitiesCleared.basic.displayValue,
+          strikesKd = strikes.killsDeathsRatio.basic.displayValue,
+          strikesKills = strikes.kills.basic.displayValue,
+          strikesAvgKills = strikes.kills.pga.displayValue,
+          strikesBestKills = strikes.bestSingleGameKills.basic.displayValue,
 	        clock = stats.allParticipantsTimePlayed.basic.displayValue,
 	        hours = clock.match(/\d+/g);
 
@@ -80,6 +96,7 @@ groupID = "2974952"
 	        console.log('Player stats:', data);
 
 	        // Populate stats
+          // pvp
 	        $('#player-clock').text(totalHours + 'h');
 	        $('#player-efficiency').text(efficiency);
 	        $('#player-kd').text(kd);
@@ -91,6 +108,19 @@ groupID = "2974952"
 	        $('#player-kill-spree').text(killSpree);
 	        $('#player-most-kills').text(mostKills);
 	        $('#player-most-precision').text(mostPrecision);
+          // pve
+          // raid
+          $('#player-raid-clears').text(raidClears);
+          $('#player-raid-kd').text(raidKd);
+          $('#player-raid-kills').text(raidKills);
+          $('#player-raid-kills-pga').text(raidAvgKills);
+          $('#player-raid-best-kills').text(raidBestKills);
+          // strikes
+          $('#player-strike-clears').text(strikesClears);
+          $('#player-strike-kd').text(strikesKd);
+          $('#player-strike-kills').text(strikesKills);
+          $('#player-strike-kills-pga').text(strikesAvgKills);
+          $('#player-strike-best-kills').text(strikesBestKills);
 				} else {
 					alert('Uh oh, failed to load player stats! Looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
 				  console.log(data);
