@@ -8,6 +8,11 @@ groupID = "2974952"
     brigade = [
   'Canismajoris',
   'Kuro',
+  'Castell',
+  'Dizzy',
+  'Headhunter',
+  'Jiangshi',
+  'JoeCorbeux',
   'Indomitare',
   'counterion',
   'Luna',
@@ -21,7 +26,14 @@ groupID = "2974952"
   'Riperino',
   'razoredge',
   'JPo203',
-  'tadd',
+  'Skinny',
+  'BONEY',
+  'Jazzy',
+  'Pike',
+  'TehMadBear',
+  'Viper',
+  'Walter',
+  'cjzilla'
 ]
 ,
     bungieId = checkParams('bungieId'),

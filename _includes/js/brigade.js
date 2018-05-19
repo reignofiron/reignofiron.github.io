@@ -1,6 +1,11 @@
 brigade = [
   'Canismajoris',
   'Kuro',
+  'Castell',
+  'Dizzy',
+  'Headhunter',
+  'Jiangshi',
+  'JoeCorbeux',
   'Indomitare',
   'counterion',
   'Luna',
@@ -14,5 +19,12 @@ brigade = [
   'Riperino',
   'razoredge',
   'JPo203',
-  'tadd',
+  'Skinny',
+  'BONEY',
+  'Jazzy',
+  'Pike',
+  'TehMadBear',
+  'Viper',
+  'Walter',
+  'cjzilla'
 ]
