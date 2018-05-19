@@ -174,31 +174,16 @@ $('form.signupForm').submit(function(e) {
 					', ' + name + '!'
 				);
 				// add new data to table immediately
-				if ($form.hasClass('signupForm--leviathan')) {
-					$form.closest('.signupSheet')
-					.find('.leviathan-signup')
-					.find('.signupSheet-empty')
-					.hide()
-					.end()
-					.find('.signupSheet-content')
-					.append(
-						'<div class="j-row signupSheet-entry">' +
-						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
-						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
-					);
-				} else if ($form.hasClass('signupForm--eow')) {
-					$form.closest('.signupSheet')
-					.find('.eow-signup')
-					.find('.signupSheet-empty')
-					.hide()
-					.end()
-					.find('.signupSheet-content')
-					.append(
-						'<div class="j-row signupSheet-entry">' +
-						'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
-						'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
-					);
-				}
+				$form.closest('.signupSheet-wrap')
+				.find('.signupSheet-empty')
+				.hide()
+				.end()
+				.find('.signupSheet-content')
+				.append(
+					'<div class="j-row signupSheet-entry">' +
+					'<div class="j-col j-col-6" data-th="Player"><span class="signupSheet-player">' + name + '</span></div>' +
+					'<div class="j-col j-col-6" data-th="Available"><span class="signupSheet-availability">' + available + '</span></div>'
+				);
 			},
 			error: function(response) {
 				console.log(response);

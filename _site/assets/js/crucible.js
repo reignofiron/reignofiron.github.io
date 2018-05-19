@@ -193,32 +193,16 @@ $('form.pvpSignupForm').submit(function(e) {
   				);
           $('.pvpSignup-form').removeClass('is-visible').fadeOut();
   				// add new data to table immediately
-          if ($form.hasClass('pvpSignupForm--open')) {
-            $form.closest('.pvpSignup')
-            .find('.pvpSignup-level--open')
-            .find('.pvpSignup-empty')
-  					.hide()
-            .end()
-  					.find('.pvpSignup-content')
-  					.append(
-  						'<div class="j-row pvpSignup-entry">' +
-  						'<div class="j-col j-col-6" data-th="Player"><span class="pvpSignup-player">' + name + '</span></div>' +
-  						'<div class="j-col j-col-6" data-th="Available"><span class="pvpSignup-availability">' + available + '</span></div>'
-  					);
-          } else if ($form.hasClass('pvpSignupForm--brigade')) {
-            $form.closest('.pvpSignup')
-            .find('.pvpSignup-level--brigade')
-            .find('.pvpSignup-empty')
-  					.hide()
-            .end()
-  					.find('.pvpSignup-content')
-  					.append(
-  						'<div class="j-row pvpSignup-entry">' +
-  						'<div class="j-col j-col-6" data-th="Player"><span class="pvpSignup-player">' + name + '</span></div>' +
-  						'<div class="j-col j-col-6" data-th="Available"><span class="pvpSignup-availability">' + available + '</span></div>'
-  					);
-          }
-
+          $form.closest('.pvpSignup-level')
+  				.find('.pvpSignup-empty')
+  				.hide()
+  				.end()
+  				.find('.pvpSignup-content')
+  				.append(
+            '<div class="j-row pvpSignup-entry">' +
+    				'<div class="j-col j-col-6" data-th="Player"><span class="pvpSignup-player">' + name + '</span></div>' +
+    				'<div class="j-col j-col-6" data-th="Available"><span class="pvpSignup-availability">' + available + '</span></div>'
+  				);
   			},
   			error: function(response) {
   				console.log(response);
