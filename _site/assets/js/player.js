@@ -35,6 +35,8 @@ groupID = "2974952"
   'cjzilla',
   'Archon',
   'Wednesday',
+  'Batman',
+  'DJCHRIS69',
 ]
 ,
     bungieId = checkParams('bungieId'),

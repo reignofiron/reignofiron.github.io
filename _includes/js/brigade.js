@@ -28,4 +28,6 @@ brigade = [
   'cjzilla',
   'Archon',
   'Wednesday',
+  'Batman',
+  'DJCHRIS69',
 ]

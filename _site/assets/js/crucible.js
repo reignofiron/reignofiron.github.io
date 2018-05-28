@@ -32,6 +32,8 @@ brigade = [
   'cjzilla',
   'Archon',
   'Wednesday',
+  'Batman',
+  'DJCHRIS69',
 ]
 ,
 days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
