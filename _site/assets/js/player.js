@@ -22,7 +22,6 @@ groupID = "2974952"
   'Visceral',
   'ZeroC00L',
   'SpaceCorgo',
-  'Iyekane',
   'Riperino',
   'razoredge',
   'JPo203',
@@ -33,7 +32,9 @@ groupID = "2974952"
   'TehMadBear',
   'Viper',
   'Walter',
-  'cjzilla'
+  'cjzilla',
+  'Archon',
+  'Wednesday',
 ]
 ,
     bungieId = checkParams('bungieId'),
@@ -165,17 +166,17 @@ groupID = "2974952"
 					$('.hero#player-hero').css({
 						'background-image': 'url("https://bungie.net/img/UserThemes/' + banner + '/header.jpg")'
 					})
-					$('#player-title').text(name);
+					$('#player-title').text(blizzard);
 					$('.player-icon').attr({
 						'src': 'https://www.bungie.net' + icon
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
 					switch(rank) {
 
-						case '3': $('#player-rank').text('Brigadier General').css('color', '#a95fb5');
+						case '3': $('#player-rank').text('Iron Lord').css('color', '#dac057');
 						break;
 
-						case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');
+						case '5': $('#player-rank').text('The Founder').css('color', '#dac057');
 						break;
 
 						case '2': if (checkName(name, brigade)) {

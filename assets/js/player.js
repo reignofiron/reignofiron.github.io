@@ -134,17 +134,17 @@ $(function() {
 					$('.hero#player-hero').css({
 						'background-image': 'url("https://bungie.net/img/UserThemes/' + banner + '/header.jpg")'
 					})
-					$('#player-title').text(name);
+					$('#player-title').text(blizzard);
 					$('.player-icon').attr({
 						'src': 'https://www.bungie.net' + icon
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
 					switch(rank) {
 
-						case '3': $('#player-rank').text('Brigadier General').css('color', '#a95fb5');
+						case '3': $('#player-rank').text('Iron Lord').css('color', '#dac057');
 						break;
 
-						case '5': $('#player-rank').text('Iron Lord').css('color', '#dac057');
+						case '5': $('#player-rank').text('The Founder').css('color', '#dac057');
 						break;
 
 						case '2': if (checkName(name, brigade)) {

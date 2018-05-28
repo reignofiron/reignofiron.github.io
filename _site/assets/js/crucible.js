@@ -19,7 +19,6 @@ brigade = [
   'Visceral',
   'ZeroC00L',
   'SpaceCorgo',
-  'Iyekane',
   'Riperino',
   'razoredge',
   'JPo203',
@@ -30,7 +29,9 @@ brigade = [
   'TehMadBear',
   'Viper',
   'Walter',
-  'cjzilla'
+  'cjzilla',
+  'Archon',
+  'Wednesday',
 ]
 ,
 days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
