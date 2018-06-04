@@ -4,7 +4,7 @@ $(function() {
 
   var
     {% include js/api.js %},
-    {% include js/brigade.js %},
+    {% include js/ranks.js %},
     bungieId = checkParams('bungieId'),
     destinyId = checkParams('destinyId'),
     joined = checkParams('joined'),
@@ -139,24 +139,24 @@ $(function() {
 						'src': 'https://www.bungie.net' + icon
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
-					switch(rank) {
-
-						case '3': $('#player-rank').text('Iron Lord').css('color', '#dac057');
-						break;
-
-						case '5': $('#player-rank').text('The Founder').css('color', '#dac057');
-						break;
-
-						case '2': if (checkName(name, brigade)) {
-							$('#player-rank').text('Iron Brigadier').css('color', '#6cbdd1');
+					// Check clan rank
+					if (rank === '1') {
+						// players with "beginner" rank in Bungie are Initaites
+						$('#player-rank').text('Iron Initiate').css('color', '#ccc');
+					} else {
+						// check for name in promoted lists
+						if (checkName(name, honored)) {
+							$('#player-rank').text('Honored Brigadier').css('color', '#6cbdd1');
+						} else if (checkName(name, exalted)) {
+							$('#player-rank').text('Exalted Brigadier').css('color', '#a95fb5');
+						} else if (checkName(name, lords)) {
+							$('#player-rank').text('Iron Lord').css('color', '#dac057');
+						} else if (checkName(name, founder)) {
+							$('#player-rank').text('The Founder').css('color', '#dac057');
 						} else {
+							// if not in any other list, they're a Sentry
 							$('#player-rank').text('Iron Sentry').css('color', '#72c173');
 						}
-						break;
-
-						case '1': $('#player-rank').text('Iron Initiate').css('color', '#ccc');
-
-						default: return
 					}
 				} else {
 					console.log('Error loading player profile:', data);

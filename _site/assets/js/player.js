@@ -2,41 +2,48 @@ $(function() {
 
   var
     apiKey = "39424dade4d141af9a0807725a14ed20", // production
-apiKey = "6987280b74b24575a4e805277bb5baa6", // local
+// apiKey = "6987280b74b24575a4e805277bb5baa6", // local
 groupID = "2974952"
 ,
-    brigade = [
-  'Canismajoris',
-  'Kuro',
+    honored = [
   'Castell',
   'Dizzy',
   'Headhunter',
-  'Jiangshi',
   'JoeCorbeux',
-  'Indomitare',
-  'counterion',
   'Luna',
   'Renzo',
   'Rumps',
-  'CyberDemon',
-  'Visceral',
   'ZeroC00L',
-  'SpaceCorgo',
   'Riperino',
-  'razoredge',
   'JPo203',
   'Skinny',
-  'BONEY',
   'Jazzy',
   'Pike',
   'TehMadBear',
   'Viper',
   'Walter',
   'cjzilla',
-  'Archon',
   'Wednesday',
   'Batman',
   'DJCHRIS69',
+	'Kwuiver',
+],
+exalted = [
+	'Archon',
+	'BONEY',
+	'CyberDemon',
+	'Jiangshi',
+	'razoredge',
+	'Visceral',
+],
+lords = [
+	'counterion',
+	'Dyxlesic',
+	'Indomitare',
+	'kuro',
+],
+founder = [
+	'CanisMajoris'
 ]
 ,
     bungieId = checkParams('bungieId'),
@@ -173,24 +180,24 @@ groupID = "2974952"
 						'src': 'https://www.bungie.net' + icon
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
-					switch(rank) {
-
-						case '3': $('#player-rank').text('Iron Lord').css('color', '#dac057');
-						break;
-
-						case '5': $('#player-rank').text('The Founder').css('color', '#dac057');
-						break;
-
-						case '2': if (checkName(name, brigade)) {
-							$('#player-rank').text('Iron Brigadier').css('color', '#6cbdd1');
+					// Check clan rank
+					if (rank === '1') {
+						// players with "beginner" rank in Bungie are Initaites
+						$('#player-rank').text('Iron Initiate').css('color', '#ccc');
+					} else {
+						// check for name in promoted lists
+						if (checkName(name, honored)) {
+							$('#player-rank').text('Honored Brigadier').css('color', '#6cbdd1');
+						} else if (checkName(name, exalted)) {
+							$('#player-rank').text('Exalted Brigadier').css('color', '#a95fb5');
+						} else if (checkName(name, lords)) {
+							$('#player-rank').text('Iron Lord').css('color', '#dac057');
+						} else if (checkName(name, founder)) {
+							$('#player-rank').text('The Founder').css('color', '#dac057');
 						} else {
+							// if not in any other list, they're a Sentry
 							$('#player-rank').text('Iron Sentry').css('color', '#72c173');
 						}
-						break;
-
-						case '1': $('#player-rank').text('Iron Initiate').css('color', '#ccc');
-
-						default: return
 					}
 				} else {
 					console.log('Error loading player profile:', data);
