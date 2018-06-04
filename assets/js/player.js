@@ -12,7 +12,7 @@ $(function() {
     checkName = function(name, list) {
 
       var m = false; // flag
-      console.log('Checking for ' + name + '...');
+      console.log('Checking ' + list + ' for ' + name + '...');
 
       // loop through clan usernames and check for a match
       $.each(list, function(i) {
