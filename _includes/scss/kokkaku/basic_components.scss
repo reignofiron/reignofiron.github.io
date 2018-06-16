@@ -51,6 +51,8 @@ div#site {
   }
   &.full-screen { // will adapt to full height of browser window
     height: 100vh;
+		height: calc(100vh - 60px);
+		max-height: none;
     h1 {
       font-size: $type-larger;
     }
