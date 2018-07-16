@@ -62,6 +62,12 @@
   h3 {
     margin: 0;
   }
+	&.exalted {
+		background: lighten(#e3d081, 26%);
+		h3 {
+			color: darken(#e3d081, 16%);
+		}
+	}
   @media screen and (max-width: 767px) {
     text-align: center;
   }

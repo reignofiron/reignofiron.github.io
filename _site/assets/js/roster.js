@@ -1,22 +1,88 @@
 // get list of members and populate roster table
-$.ajax({
-  url: "https://www.bungie.net/platform/GroupV2/" + groupID + "/Members/",
-  headers: {
-    "X-API-Key": apiKey
-  }
-}).success(function(json) {
-	if (json.ErrorStatus === 'Success') {
-		var members = json.Response.results;
-		console.log('Member list:', members);
-		listMembers(members);
-	} else {
+
+var roster = [];
+
+$.when(
+	// get Reign of Iron roster
+	$.ajax({
+		url: "https://www.bungie.net/platform/GroupV2/" + roiGroupId + "/Members/",
+		headers: {
+			"X-API-Key": apiKey
+		}
+	})
+	.success(function(json) {
+
+		if (json.ErrorStatus === 'Success') {
+
+			var members = json.Response.results;
+
+			$.each(members, function(i) {
+				var member = members[i];
+				member.exalted = false;
+				roster.push(member);
+			});
+
+			console.log('RoI member list:', members);
+
+		} else {
+
+			alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+			console.log(json);
+
+		}
+
+	})
+	.error(function(err) {
+
 		alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
-	  console.log(json);
-	}
-}).error(function(json) {
-  alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
-  console.log(json);
+		console.log(err);
+
+	}),
+
+	// get Exalted roster
+
+	$.ajax({
+		url: "https://www.bungie.net/platform/GroupV2/" + exaltedGroupId + "/Members/",
+		headers: {
+			"X-API-Key": apiKey
+		}
+	})
+	.success(function(json) {
+
+		if (json.ErrorStatus === 'Success') {
+
+			var members = json.Response.results;
+
+			$.each(members, function(i) {
+				var member = members[i];
+				member.exalted = true;
+				roster.push(member);
+			});
+
+			console.log('Exalted member list:', members);
+
+		} else {
+
+			alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+			console.log(json);
+
+		}
+
+	})
+	.error(function(json) {
+
+		alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
+		console.log(json);
+
+	})
+
+)
+.then(function() {
+
+	listMembers(roster);
+
 });
+
 
 function listMembers(rsp) {
 
@@ -34,23 +100,19 @@ function listMembers(rsp) {
         return ($(b).data('username')) < ($(a).data('username')) ? 1 : -1;
       }).appendTo(list);
     }
-
-    $.each(rsp, function(i) {
-      if (rsp[i].isOnline) {
-        online++
-      }
-    });
-
     list.find('.member.online').prependTo(list);
-    $('#member-count').text(online + ' / ' + rsp.length + ' Members Online');
-
   };
 
   for (var i = 0; i < rsp.length; i++) {
 
     var
-      profile = rsp[i].bungieNetUserInfo,
-      member = $('<a></a>');
+		profile = rsp[i].bungieNetUserInfo,
+		member = $('<a></a>');
+
+		// tally up online members
+		if (rsp[i].isOnline) {
+			online++
+		}
 
 		// check for valid profile
 		// some users don't have Bungie profiles somehow and it breaks function
@@ -83,8 +145,14 @@ function listMembers(rsp) {
           '<div class="j-col j-col-3 member-joined" data-label="Joined">' + joined.replace(/-/g, '/') + '</div>' +
           '<div class="j-col j-col-3 member-status" data-label="Status"><span class="member-online" id="status-' + memberId + '">' + online + '</span></div>' +
           '<div class="j-col j-col-3 member-button"><a class="button outline gold full-width">' + 'View Stats' + '</a></div>'
-        )
-        .appendTo(list);
+        );
+
+			if (rsp[i].exalted) {
+				member.addClass('exalted');
+			}
+
+			member.appendTo(list);
+
 			// indicate online/offline status
       if (String(online) === 'true') {
         $('#status-' + memberId)
@@ -102,5 +170,7 @@ function listMembers(rsp) {
     }
 
   }
+
+	$('#member-count').text(online + ' / ' + rsp.length + ' Members Online');
 
 }
