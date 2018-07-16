@@ -1,7 +1,5 @@
 ---
 ---
-var
-  {% include js/api.js %};
 
 // get list of members and populate roster table
 $.ajax({
@@ -27,6 +25,7 @@ function listMembers(rsp) {
 
   var
   list = $('.memberList-list'),
+  online = 0,
   sortMembers = function(method) {
     // sort by date joined
     if (method = joined) {
@@ -39,7 +38,14 @@ function listMembers(rsp) {
       }).appendTo(list);
     }
 
+    $.each(rsp, function(i) {
+      if (rsp[i].isOnline) {
+        online++
+      }
+    });
+
     list.find('.member.online').prependTo(list);
+    $('#member-count').text(online + ' / ' + rsp.length + ' Members Online');
 
   };
 

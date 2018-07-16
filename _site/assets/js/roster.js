@@ -1,9 +1,3 @@
-var
-  apiKey = "39424dade4d141af9a0807725a14ed20", // production
-// apiKey = "6987280b74b24575a4e805277bb5baa6", // local
-groupID = "2974952"
-;
-
 // get list of members and populate roster table
 $.ajax({
   url: "https://www.bungie.net/platform/GroupV2/" + groupID + "/Members/",
@@ -28,6 +22,7 @@ function listMembers(rsp) {
 
   var
   list = $('.memberList-list'),
+  online = 0,
   sortMembers = function(method) {
     // sort by date joined
     if (method = joined) {
@@ -40,7 +35,14 @@ function listMembers(rsp) {
       }).appendTo(list);
     }
 
+    $.each(rsp, function(i) {
+      if (rsp[i].isOnline) {
+        online++
+      }
+    });
+
     list.find('.member.online').prependTo(list);
+    $('#member-count').text(online + ' / ' + rsp.length + ' Members Online');
 
   };
 

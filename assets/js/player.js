@@ -3,7 +3,6 @@
 $(function() {
 
   var
-    {% include js/api.js %},
     {% include js/ranks.js %},
     bungieId = checkParams('bungieId'),
     destinyId = checkParams('destinyId'),

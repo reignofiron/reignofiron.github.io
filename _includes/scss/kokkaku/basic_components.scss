@@ -20,6 +20,12 @@ div#site {
 .centered {
   text-align: center;
 }
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
 // Hero section
 //   First element on page after navbar
 .hero {
@@ -91,6 +97,21 @@ div#site {
 .hero-content {
   text-align: center;
 }
+#loading {
+  background: rgba(white, .9);
+  left: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 //   Color overlay
 //   Requires position: relative;
 @mixin overlay($color) {
@@ -150,9 +171,15 @@ section.color-block {
   &.lighter-gray {
     background: $lighter-gray;
   }
+	&.black {
+		background: $black;
+	}
   &.dark-black {
     background: $dark-black;
   }
+	&.darkest-black {
+		background: #111;
+	}
   &.blue-to-dark-blue {
     @include blue-to-dark-blue;
   }

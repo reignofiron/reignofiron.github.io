@@ -1,0 +1,21 @@
+.hero#apply { background-image: url("/assets/img/reign-of-iron-apply-banner.jpg"); background-position: center; position: relative; }
+.hero#apply .hero-content { z-index: 200; }
+.hero#apply h1 { margin-top: 0; }
+.hero#apply::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65); z-index: 100; }
+
+.requirements { margin-bottom: 2.618rem; }
+@media screen and (max-width: 767px) { .requirements { text-align: center; } }
+
+form.apply { background: #fff; border-radius: 3px; box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); padding: 2.618rem 1.618rem; }
+form.apply input[type="text"], form.apply input[type="number"] { background: transparent; border: 0; border-bottom: 2px solid #ccc; border-radius: 0; transition: 300ms ease; -webkit-appearance: none; }
+form.apply input[type="text"]::placeholder, form.apply input[type="number"]::placeholder { color: #ccc; }
+form.apply input[type="text"]:focus, form.apply input[type="number"]:focus { border-color: #e3d081; }
+form.apply input[type="text"]:-webkit-autofill, form.apply input[type="text"]:-webkit-autofill:hover, form.apply input[type="text"]:-webkit-autofill:focus form.apply input[type="text"]:-webkit-autofill, form.apply input[type="text"]:-webkit-autofill:hover form.apply input[type="text"]:-webkit-autofill:focus, form.apply input[type="text"]:-webkit-autofill, form.apply input[type="text"]:-webkit-autofill:hover, form.apply input[type="text"]:-webkit-autofill:focus, form.apply input[type="number"]:-webkit-autofill, form.apply input[type="number"]:-webkit-autofill:hover, form.apply input[type="number"]:-webkit-autofill:focus form.apply input[type="text"]:-webkit-autofill, form.apply input[type="number"]:-webkit-autofill:hover form.apply input[type="text"]:-webkit-autofill:focus, form.apply input[type="number"]:-webkit-autofill, form.apply input[type="number"]:-webkit-autofill:hover, form.apply input[type="number"]:-webkit-autofill:focus, form.apply input[type="text"]:-webkit-autofill:focus form.apply input[type="number"]:-webkit-autofill, form.apply input[type="text"]:-webkit-autofill:hover form.apply input[type="number"]:-webkit-autofill:focus, form.apply input[type="number"]:-webkit-autofill:focus form.apply input[type="number"]:-webkit-autofill, form.apply input[type="number"]:-webkit-autofill:hover form.apply input[type="number"]:-webkit-autofill:focus { box-shadow: inset 0 2.618rem 0 0 white; }
+form.apply input[type="number"] { width: 3rem; }
+form.apply input[type="number"]::-webkit-inner-spin-button, form.apply input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+form.apply button { border: 0; color: #333; }
+@media screen and (max-width: 767px) { form.apply input[type="text"] { width: 6rem; }
+  form.apply input[name="Referral"] { width: 100%; } }
+
+.apply-field { margin-bottom: 2.618rem; }
+.apply-field:last-child { margin-bottom: 0; }

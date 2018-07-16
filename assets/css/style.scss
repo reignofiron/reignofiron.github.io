@@ -20,12 +20,23 @@ body {
   width: 100%;
   z-index: 600;
   ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     height: 60px;
     margin: 0;
     padding: 0;
   }
   @media screen and (max-width: 1024px) {
     ul {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
       height: auto;
     }
   }
@@ -58,7 +69,8 @@ body {
   }
 }
 .roiNav-item {
-  display: inline-block;
+  align-self: stretch;
+  display: block;
   margin: 0;
   padding: 0;
   a {
@@ -157,7 +169,7 @@ body {
 }
 
 .roiFooter {
-  background: #222;
+  background: #111;
   overflow: hidden;
   padding: 4.263rem 0;
   span {
