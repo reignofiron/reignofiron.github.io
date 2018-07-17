@@ -5,6 +5,7 @@ $(function() {
   var
     {% include js/ranks.js %},
     bungieId = checkParams('bungieId'),
+    exalted = checkParams('exalted'),
     destinyId = checkParams('destinyId'),
     joined = checkParams('joined'),
     rank = checkParams('rank'),
@@ -171,24 +172,30 @@ $(function() {
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
 					// Check clan rank
-					if (rank === '1') {
-						// players with "beginner" rank in Bungie are Initaites
-						$('#player-rank').text('Iron Initiate').css('color', '#ccc');
-					} else {
-						// check for name in promoted lists
-						if (checkName(name, honored)) {
-							$('#player-rank').text('Honored Brigadier').css('color', '#6cbdd1');
-						} else if (checkName(name, exalted)) {
-							$('#player-rank').text('Exalted Brigadier').css('color', '#a95fb5');
-						} else if (checkName(name, lords)) {
-							$('#player-rank').text('Iron Lord').css('color', '#dac057');
-						} else if (checkName(name, founder)) {
-							$('#player-rank').text('The Founder').css('color', '#dac057');
-						} else {
-							// if not in any other list, they're a Sentry
-							$('#player-rank').text('Iron Sentry').css('color', '#72c173');
-						}
-					}
+					if (exalted) {
+            if (checkName(name, exaltedGeneral)) {
+              $('#player-rank').text('Exalted General').css('color', '#f37746');
+            } else {
+              $('#player-rank').text('Exalted').css('color', '#dac057');
+            }
+          } else {
+            if (rank === '1') {
+  						// players with "beginner" rank in Bungie are Initaites
+  						$('#player-rank').text('Iron Initiate').css('color', '#ccc');
+  					} else {
+  						// check for name in promoted lists
+  						if (checkName(name, honored)) {
+  							$('#player-rank').text('Honored Brigadier').css('color', '#6cbdd1');
+  						} else if (checkName(name, revered)) {
+  							$('#player-rank').text('Exalted Brigadier').css('color', '#a95fb5');
+  						} else if (checkName(name, founder)) {
+  							$('#player-rank').text('The Founder').css('color', '#dac057');
+  						} else {
+  							// if not in any other list, they're a Sentry
+  							$('#player-rank').text('Iron Sentry').css('color', '#72c173');
+  						}
+  					}
+          }
 				} else {
 					console.log('Error loading player profile:', data);
 	        alert('Uh oh, failed to load player info! Looks like Bungie\'s doing server maintenance or having problems. Stats will be back up when Bungie\'s servers are. Please check back again soon!');
