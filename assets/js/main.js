@@ -49,6 +49,22 @@ var {% include js/api.js %};
 
 })();
 
+function checkParams(param) {
+
+  var
+  pageURL = window.location.search.substring(1),
+  urlParams = pageURL.split('&');
+
+  if (urlParams.length > 0) {
+    for (var i = 0; i < urlParams.length; i++) {
+      var pair = urlParams[i].split('=');
+      if (pair[0] == param) {
+        return pair[1];
+      }
+    }
+  }
+}
+
 $(function() { // doc ready pants
 
 	// mobile nav trigger
