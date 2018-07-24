@@ -88,7 +88,7 @@ function listMembers(rsp) {
 
   var
   list = $('.memberList-list'),
-  online = 0,
+  on = 0,
   sortMembers = function(method) {
     // sort by date joined
     if (method = joined) {
@@ -111,7 +111,7 @@ function listMembers(rsp) {
 
 		// tally up online members
 		if (rsp[i].isOnline) {
-			online++
+			on++
 		}
 
 		// check for valid profile
@@ -176,6 +176,6 @@ function listMembers(rsp) {
 
   }
 
-	$('#member-count').text(online + ' / ' + rsp.length + ' Members Online');
+	$('#member-count').text(on + ' / ' + rsp.length + ' Members Online');
 
 }
