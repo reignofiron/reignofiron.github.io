@@ -184,7 +184,7 @@ $(function() {
 						if (checkName(name, honored)) {
 							$('#player-rank').text('Honored').css('color', '#6cbdd1');
 						} else if (checkName(name, revered)) {
-							$('#player-rank').text('Exalted').css('color', '#a95fb5');
+							$('#player-rank').text('Revered').css('color', '#a95fb5');
 						} else if (checkName(name, founder)) {
 							$('#player-rank').text('The Founder').css('color', '#dac057');
 						} else {
