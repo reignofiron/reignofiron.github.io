@@ -222,8 +222,8 @@ $('form.pvpSignupForm').submit(function(e) {
 
 	} else { // if user entered an invalid name
 
-		console.log('Error: no record of ' + name + ' in Reign of Iron roster.');
-		alert('Sorry, no record of ' + name + ' in the Reign of Iron roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
+		console.log('Error: no record of ' + name + ' in Exalted roster.');
+		alert('Sorry, no record of ' + name + ' in the Exalted roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
 		$('#loading').hide();
 	}
 

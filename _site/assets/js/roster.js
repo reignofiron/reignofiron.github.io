@@ -3,45 +3,7 @@
 var roster = [];
 
 $.when(
-	// get Reign of Iron roster
-	$.ajax({
-		url: "https://www.bungie.net/platform/GroupV2/" + roiGroupId + "/Members/",
-		headers: {
-			"X-API-Key": apiKey
-		}
-	})
-	.success(function(json) {
-
-		if (json.ErrorStatus === 'Success') {
-
-			var members = json.Response.results;
-
-			$.each(members, function(i) {
-				var member = members[i];
-				member.exalted = false;
-				roster.push(member);
-			});
-
-			console.log('RoI member list:', members);
-
-		} else {
-
-			alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
-			console.log(json);
-
-		}
-
-	})
-	.error(function(err) {
-
-		alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
-		console.log(err);
-
-	}),
-
-	// get Exalted roster
-
-	$.ajax({
+		$.ajax({
 		url: "https://www.bungie.net/platform/GroupV2/" + exaltedGroupId + "/Members/",
 		headers: {
 			"X-API-Key": apiKey
@@ -51,15 +13,9 @@ $.when(
 
 		if (json.ErrorStatus === 'Success') {
 
-			var members = json.Response.results;
+			roster = json.Response.results;
 
-			$.each(members, function(i) {
-				var member = members[i];
-				member.exalted = true;
-				roster.push(member);
-			});
-
-			console.log('Exalted member list:', members);
+			console.log('Exalted member list:', roster);
 
 		} else {
 

@@ -111,7 +111,7 @@ form.submit(function(e) {
                 // show loading animation and disable scroll
                 loading.fadeOut(600, function() {
                   $('html,body').css('overflow', '');
-                  alert('Success! Your application has been received and will be reviewed by Reign of Iron Leadership shortly. We\'ll contact you on Discord if you are approved!');
+                  alert('Success! Your application has been received and will be reviewed by Exalted Leadership shortly. We\'ll contact you on Discord if you are approved!');
                 });
               } else {
                 loading.fadeOut(600, function() {

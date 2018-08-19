@@ -10,13 +10,13 @@ var
 	checkName = function(name) {
 
 		var m = false; // flag
-		console.log('Checking to see if ' + name + ' is a Reign of Iron Member...');
+		console.log('Checking to see if ' + name + ' is a Exalted Member...');
 
 		// loop through clan roster and check for a match
 		$.each(roster, function(i) {
 			// make case insensitve
 			if (name.toLowerCase() === roster[i].toLowerCase()) {
-				console.log('Confirmed, ' + roster[i] + ' is in Reign of Iron');
+				console.log('Confirmed, ' + roster[i] + ' is in Exalted');
 				m = true;
 			}
 		});
@@ -192,8 +192,8 @@ $('form.signupForm').submit(function(e) {
 
 	} else { // if user entered an invalid name
 
-		console.log('Error: no record of ' + name + ' in Reign of Iron roster.');
-		alert('Sorry, no record of ' + name + ' in the Reign of Iron roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
+		console.log('Error: no record of ' + name + ' in Exalted roster.');
+		alert('Sorry, no record of ' + name + ' in the Exalted roster. Please make sure you\'re using your Battletag and that you\'ve spelled it correctly.');
 		$('#loading').fadeOut();
 	}
 
