@@ -138,3 +138,12 @@ function listMembers(rsp) {
 	$('#member-count').text(on + ' / ' + rsp.length + ' Members Online');
 
 }
+
+$.ajax({
+	url: "https://www.bungie.net/platform/GroupV2/3225268/Members/",
+	headers: {
+		"X-API-Key": apiKey
+	}
+}).success(function(data) {
+console.log(data);
+});
