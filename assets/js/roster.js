@@ -33,6 +33,15 @@ $.when(
 		alert('Uh oh, looks like Bungie\'s doing server maintenance or having problems. Please check back again soon!');
 		console.log(json);
 
+	}),
+
+	$.ajax({
+		url: 'https://www.bungie.net/platform/destiny2/1/profile/4611686018442820791/?components=200',
+		headers: {
+			'X-API-Key': apiKey
+		}
+	}).success(function(res) {
+		console.log('XBOX stats:', res);
 	})
 
 )
@@ -138,12 +147,3 @@ function listMembers(rsp) {
 	$('#member-count').text(on + ' / ' + rsp.length + ' Members Online');
 
 }
-
-$.ajax({
-	url: "https://www.bungie.net/platform/GroupV2/3225268/Members/",
-	headers: {
-		"X-API-Key": apiKey
-	}
-}).success(function(data) {
-console.log(data);
-});

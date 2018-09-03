@@ -171,27 +171,6 @@ $(function() {
 						'src': 'https://www.bungie.net' + icon
 					});
 					$('#player-join-date').text(joined.replace(/-/g, '/'));
-					// Check which clan
-					// if (exalted) {
-					// 	// special check for clan leader
-          //   if (checkName(name, exaltedGeneral)) {
-          //     $('#player-rank').text('Exalted General').css('color', '#f37746');
-          //   } else {
-          //     $('#player-rank').text('Exalted').css('color', '#dac057');
-          //   }
-          // } else {
-					// 	// check for name in promoted lists
-					// 	if (checkName(name, honored)) {
-					// 		$('#player-rank').text('Honored').css('color', '#6cbdd1');
-					// 	} else if (checkName(name, revered)) {
-					// 		$('#player-rank').text('Revered').css('color', '#a95fb5');
-					// 	} else if (checkName(name, founder)) {
-					// 		$('#player-rank').text('The Founder').css('color', '#dac057');
-					// 	} else {
-					// 		// if not in any other list, they're a Sentry
-					// 		$('#player-rank').text('Initiate').css('color', '#72c173');
-					// 	}
-          // }
 				} else {
 					console.log('Error loading player profile:', data);
 	        alert('Uh oh, failed to load player info! Looks like Bungie\'s doing server maintenance or having problems. Stats will be back up when Bungie\'s servers are. Please check back again soon!');
