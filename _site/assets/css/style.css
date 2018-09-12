@@ -1,9 +1,9 @@
 html, body { margin: 0; padding: 0; overflow-x: hidden; }
 html.overflow-hidden, body.overflow-hidden { overflow: hidden; }
 
-body { padding-top: 60px; }
+body { padding-top: calc(60px + 2.618rem); }
 
-.roiNav { background: #222; height: 60px; position: fixed; top: 0; width: 100%; z-index: 600; }
+.roiNav { background: #222; height: 60px; position: fixed; top: 2.618rem; width: 100%; z-index: 600; }
 .roiNav ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; height: 60px; margin: 0; padding: 0; }
 @media screen and (max-width: 1024px) { .roiNav ul { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: auto; } }
 
@@ -36,3 +36,5 @@ body { padding-top: 60px; }
 
 .roiFooter { background: #111; overflow: hidden; padding: 4.263rem 0; }
 .roiFooter span { color: #999; }
+
+.site-level-alert { background: #e3d081; height: 2.618rem; padding: .5rem; position: fixed; top: 0; width: 100%; z-index: 600; }
