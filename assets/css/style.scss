@@ -10,13 +10,13 @@ body {
   }
 }
 body {
-  padding-top: calc(60px + 2.618rem);
+  padding-top: 60px;
 }
 .roiNav {
   background: #222;
   height: 60px;
   position: fixed;
-  top: 2.618rem;
+  top: 0;
   width: 100%;
   z-index: 600;
   ul {
@@ -175,14 +175,4 @@ body {
   span {
     color: #999;
   }
-}
-
-.site-level-alert {
-  background: #e3d081;
-  height: 2.618rem;
-  padding: .5rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 600;
 }
